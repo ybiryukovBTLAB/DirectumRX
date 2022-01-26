@@ -1,0 +1,64 @@
+{
+  "$type": "Sungero.Metadata.ModuleMetadata, Sungero.Metadata",
+  "NameGuid": "18851f3d-aeea-412e-b2ca-44c0cbbdee87",
+  "Name": "DiadocIntegration",
+  "AsyncHandlers": [],
+  "ClientAssemblyName": "partner.DiadocIntegration.Client",
+  "ClientBaseAssemblyName": "partner.DiadocIntegration.ClientBase",
+  "ClientBaseNamespace": "partner.DiadocIntegration.ClientBase",
+  "ClientNamespace": "partner.DiadocIntegration.Client",
+  "Code": "DiadocI",
+  "CompanyCode": "partner",
+  "Cover": {
+    "NameGuid": "7024be01-91fc-43d8-b30a-415b80d495ad",
+    "Actions": [],
+    "Background": null,
+    "Footer": {
+      "NameGuid": "b9b87ad2-bd90-4669-8ed2-98c18a7238f3",
+      "BackgroundPosition": "Stretch"
+    },
+    "Groups": [],
+    "Header": {
+      "NameGuid": "940f5a0f-8647-410e-8cd1-b91dc424df42",
+      "BackgroundPosition": "Stretch"
+    }
+  },
+  "Dependencies": [
+    {
+      "Id": "51b4052e-5e7b-4f16-b09e-42f03f5b4f9f",
+      "IsSolutionModule": true,
+      "MaxVersion": "",
+      "MinVersion": ""
+    }
+  ],
+  "ExplorerTreeOrder": [
+    {
+      "ItemId": "a766b83f-6a8a-414b-bef0-b193d53e3224"
+    }
+  ],
+  "IconResourcesKeys": [],
+  "Importance": "Medium",
+  "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "InterfaceNamespace": "partner.DiadocIntegration",
+  "PublicStructures": [],
+  "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "ResourceInterfaceNamespace": "partner.DiadocIntegration",
+  "ResourcesKeys": [],
+  "ServerAssemblyName": "partner.DiadocIntegration.Server",
+  "ServerNamespace": "partner.DiadocIntegration.Server",
+  "SharedAssemblyName": "partner.DiadocIntegration.Shared",
+  "SharedNamespace": "partner.DiadocIntegration.Shared",
+  "SpecialFolders": [],
+  "Version": "0.0.1.0",
+  "Widgets": [],
+  "Versions": [
+    {
+      "Type": "ModuleMetadata",
+      "Number": 6
+    },
+    {
+      "Type": "DomainApi",
+      "Number": 3
+    }
+  ]
+}

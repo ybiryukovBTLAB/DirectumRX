@@ -1,0 +1,82 @@
+{
+  "$type": "Sungero.Metadata.SolutionMetadata, Sungero.Metadata",
+  "NameGuid": "51b4052e-5e7b-4f16-b09e-42f03f5b4f9f",
+  "Name": "Solution1",
+  "AsyncHandlers": [],
+  "ClientAssemblyName": "partner.Solution1.Client",
+  "ClientBaseAssemblyName": "partner.Solution1.ClientBase",
+  "ClientBaseNamespace": "partner.Solution1.ClientBase",
+  "ClientNamespace": "partner.Solution1.Client",
+  "Code": "Solutio",
+  "CompanyCode": "partner",
+  "Cover": {
+    "NameGuid": "e5f6384d-717a-4e58-b531-f3dc22b2084f",
+    "Actions": [],
+    "Background": null,
+    "Footer": {
+      "NameGuid": "69c9e66f-49ba-4b8c-bfd5-0d7654b52019",
+      "BackgroundPosition": "Stretch"
+    },
+    "Groups": [],
+    "Header": {
+      "NameGuid": "2cc9ceae-6334-466e-bc84-7eef188a8ead",
+      "BackgroundPosition": "Stretch"
+    }
+  },
+  "DesktopViews": [],
+  "ExplorerTreeOrder": [
+    {
+      "ItemId": "61088011-3cdb-470f-b783-4b56f0ae1e45"
+    },
+    {
+      "ItemId": "8562c0f2-94fd-467d-b8ee-a8c7ef0ea2ed",
+      "PreviousItemId": "61088011-3cdb-470f-b783-4b56f0ae1e45"
+    },
+    {
+      "ItemId": "9df44a07-01d5-4973-bda3-2838deec3413",
+      "PreviousItemId": "8562c0f2-94fd-467d-b8ee-a8c7ef0ea2ed"
+    },
+    {
+      "ItemId": "517ca978-e300-43f7-986e-19ccfad4e4a4",
+      "PreviousItemId": "9df44a07-01d5-4973-bda3-2838deec3413"
+    },
+    {
+      "ItemId": "596047a1-31d4-4743-8fc1-8f5b80d6445f",
+      "PreviousItemId": "517ca978-e300-43f7-986e-19ccfad4e4a4"
+    },
+    {
+      "ItemId": "d6f1ff19-349b-4db2-8b36-3658f003c2ea",
+      "PreviousItemId": "596047a1-31d4-4743-8fc1-8f5b80d6445f"
+    }
+  ],
+  "IconResourcesKeys": [],
+  "Importance": "Medium",
+  "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "InterfaceNamespace": "partner.Solution1",
+  "OrderedSpecialFolders": [],
+  "PublicStructures": [],
+  "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "ResourceInterfaceNamespace": "partner.Solution1",
+  "ResourcesKeys": [],
+  "ServerAssemblyName": "partner.Solution1.Server",
+  "ServerNamespace": "partner.Solution1.Server",
+  "SharedAssemblyName": "partner.Solution1.Shared",
+  "SharedNamespace": "partner.Solution1.Shared",
+  "SpecialFolders": [],
+  "Version": "0.0.1.0",
+  "Widgets": [],
+  "Versions": [
+    {
+      "Type": "SolutionMetadata",
+      "Number": 6
+    },
+    {
+      "Type": "ModuleMetadata",
+      "Number": 6
+    },
+    {
+      "Type": "DomainApi",
+      "Number": 3
+    }
+  ]
+}
