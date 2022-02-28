@@ -251,7 +251,7 @@
           "ColumnSpan": 1,
           "GroupType": "WithTitleNoBorder",
           "ParentGuid": "01dd99f5-db49-480e-b699-28488f2653fb",
-          "RowNumber": 3,
+          "RowNumber": 2,
           "RowSpan": 1,
           "Versions": []
         },
@@ -653,20 +653,6 @@
         },
         {
           "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
-          "NameGuid": "8392dbbb-e251-4cd7-b5bd-9c687d087b5a",
-          "Name": "TableClientLinePartnerpartnerpartner",
-          "ColumnNumber": 0,
-          "ColumnSpan": 1,
-          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.GridControlToChildCollectionBinder",
-          "HeaderLocation": "Top",
-          "ParentGuid": "01dd99f5-db49-480e-b699-28488f2653fb",
-          "PropertyGuid": "1c14c442-f977-439a-adb3-4ed26486da5b",
-          "RowNumber": 2,
-          "RowSpan": 1,
-          "Settings": []
-        },
-        {
-          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
           "NameGuid": "a3ba199a-3220-44d1-9b09-026f8751a87b",
           "Name": "Synhronyse1Cpartnerpartner",
           "ColumnNumber": 0,
@@ -675,6 +661,19 @@
           "ParentGuid": "4e1d78fc-6f6c-4c81-bf9a-a1fa2031a46b",
           "PropertyGuid": "a45eac53-e74d-42af-80e0-d7bdb15aac5c",
           "RowNumber": 2,
+          "RowSpan": 1,
+          "Settings": []
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "86349810-08df-4910-a969-878c460172e8",
+          "Name": "Controlpartner",
+          "ColumnNumber": 0,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
+          "ParentGuid": "86bc6ac8-f101-4c25-b562-62751b8e5223",
+          "PropertyGuid": "d1aa659d-6894-48e7-80f5-eb4cc254819f",
+          "RowNumber": 1,
           "RowSpan": 1,
           "Settings": []
         }
@@ -730,9 +729,16 @@
       "NameGuid": "a45eac53-e74d-42af-80e0-d7bdb15aac5c",
       "Name": "Synhronyse1Cpartner",
       "Code": "Synhronyse1Cpa",
-      "IsLoadEagerly": true,
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.BooleanEditorToBooleanBinder",
       "PreviousPropertyGuid": "1c14c442-f977-439a-adb3-4ed26486da5b"
+    },
+    {
+      "$type": "Sungero.Metadata.StringPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "d1aa659d-6894-48e7-80f5-eb4cc254819f",
+      "Name": "NDSpartner",
+      "Code": "NDSpartner",
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
+      "PreviousPropertyGuid": "a45eac53-e74d-42af-80e0-d7bdb15aac5c"
     }
   ],
   "PublicStructures": [],

@@ -1,0 +1,100 @@
+{
+  "$type": "Sungero.Metadata.DocumentMetadata, Sungero.Content.Shared",
+  "NameGuid": "dd81f4d1-0df7-496e-a26b-28312a32e75f",
+  "Name": "ExchangeDocument",
+  "AccessRightsMode": "Both",
+  "BaseGuid": "cf8357c3-8266-490d-b75e-0bd3e46b1ae8",
+  "CanBeNavigationPropertyType": true,
+  "CreationAreaMetadata": {
+    "NameGuid": "7322020b-3299-4fba-b9b0-4c995bd2e401",
+    "Name": "CreationArea",
+    "Buttons": [],
+    "IsAncestorMetadata": true,
+    "Versions": []
+  },
+  "ExtraSearchProperties": [],
+  "FilterPanel": {
+    "NameGuid": "80d3ce1a-9a72-443a-8b6c-6c6eef0c8d0f",
+    "Name": "FilterPanel",
+    "Controls": [],
+    "IsAncestorMetadata": true,
+    "Versions": []
+  },
+  "IconResourcesKeys": [],
+  "LayeredFromGuid": "cf8357c3-8266-490d-b75e-0bd3e46b1ae8",
+  "OpenCardByDefaultInCollection": true,
+  "OperationsClass": "",
+  "Properties": [
+    {
+      "$type": "Sungero.Metadata.CollectionPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "56cbe741-880f-4e6f-9567-343d08494b59",
+      "Name": "Versions",
+      "EntityGuid": "5b866166-177a-4318-a2f5-f03978b7f7fc",
+      "IsAncestorMetadata": true,
+      "Overridden": [
+        "EntityGuid"
+      ],
+      "Versions": []
+    },
+    {
+      "$type": "Sungero.Metadata.CollectionPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "15280407-331e-42f6-b263-041a495b66cd",
+      "Name": "Tracking",
+      "EntityGuid": "3c643d34-1523-4270-839e-0f4e39bc8fbf",
+      "IsAncestorMetadata": true,
+      "Overridden": [
+        "EntityGuid"
+      ],
+      "Versions": []
+    }
+  ],
+  "PublicFunctions": [
+    {
+      "Name": "ChangeDocumentType",
+      "Parameters": [
+        {
+          "Name": "exchangeDocument",
+          "ParameterType": "global::partner.Solution1.IExchangeDocument",
+          "ParameterTypeFullName": "partner.Solution1.IExchangeDocument, Sungero.Domain.Interfaces"
+        },
+        {
+          "Name": "type",
+          "ParameterType": "Sungero.Domain.Shared.IEntityInfo"
+        }
+      ],
+      "ReturnType": "global::Sungero.Docflow.IOfficialDocument",
+      "ReturnTypeFullName": "Sungero.Docflow.IOfficialDocument, Sungero.Domain.Interfaces"
+    }
+  ],
+  "PublicStructures": [],
+  "ResourcesKeys": [],
+  "RibbonCardMetadata": {
+    "NameGuid": "b6516fa5-5191-480f-84dc-ea832d8a3930",
+    "Name": "RibbonCard",
+    "Categories": [],
+    "Elements": [],
+    "Groups": [],
+    "IsAncestorMetadata": true,
+    "Pages": [],
+    "RibbonKind": "Card"
+  },
+  "RibbonCollectionMetadata": {
+    "NameGuid": "b9011a02-9ab9-4b51-8e5e-225127b71196",
+    "Name": "RibbonCollection",
+    "Categories": [],
+    "Elements": [],
+    "Groups": [],
+    "IsAncestorMetadata": true,
+    "Pages": []
+  },
+  "Versions": [
+    {
+      "Type": "DocumentMetadata",
+      "Number": 2
+    },
+    {
+      "Type": "EntityMetadata",
+      "Number": 9
+    }
+  ]
+}

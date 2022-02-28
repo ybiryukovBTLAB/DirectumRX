@@ -38,6 +38,113 @@
           "Versions": []
         },
         {
+          "$type": "Sungero.Metadata.ControlGroupMetadata, Sungero.Metadata",
+          "NameGuid": "73e9df7c-895e-4811-b3d5-76c6f95b87aa",
+          "Name": "Terms",
+          "ColumnDefinitions": [
+            {
+              "Percentage": 33.33
+            },
+            {
+              "Percentage": 33.33
+            },
+            {
+              "Percentage": 33.33
+            }
+          ],
+          "GroupType": "WithTitleNoBorder",
+          "IsAncestorMetadata": true,
+          "Overridden": [
+            "Controls",
+            "ColumnDefinitions"
+          ],
+          "Versions": []
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "4b0f9f5a-515f-48e8-89b3-b891ba9b943b",
+          "Name": "ValidFrompartner",
+          "ColumnNumber": 0,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DateTimeEditorToDateTimeBinder",
+          "ParentGuid": "73e9df7c-895e-4811-b3d5-76c6f95b87aa",
+          "PropertyGuid": "2be04302-8431-4b2f-add4-973c7eefd787",
+          "RowNumber": 0,
+          "RowSpan": 1,
+          "Settings": [],
+          "Versions": []
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "98616464-6eaf-4cbb-9f67-ca0a09417c10",
+          "Name": "ValidTillpartner",
+          "ColumnNumber": 1,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DateTimeEditorToDateTimeBinder",
+          "ParentGuid": "73e9df7c-895e-4811-b3d5-76c6f95b87aa",
+          "PropertyGuid": "289ffd6e-bebb-4dbf-8264-e19950480351",
+          "RowNumber": 0,
+          "RowSpan": 1,
+          "Settings": [],
+          "Versions": []
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "535a4857-d47f-4d0a-b28b-fbbde9e3f535",
+          "Name": "TotalAmountpartner",
+          "ColumnNumber": 0,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.NumericEditorToIntAndDoubleBinder",
+          "ParentGuid": "73e9df7c-895e-4811-b3d5-76c6f95b87aa",
+          "PropertyGuid": "96c9e3f6-9201-4e6c-92e0-acf7a1624081",
+          "RowNumber": 1,
+          "RowSpan": 1,
+          "Settings": [],
+          "Versions": []
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "57371953-b26b-4bba-a41a-206167b12046",
+          "Name": "Currencypartner",
+          "ColumnNumber": 1,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToNavigationBinder",
+          "ParentGuid": "73e9df7c-895e-4811-b3d5-76c6f95b87aa",
+          "PropertyGuid": "ca562f2d-d3c7-448f-a648-b858e8d2fb2a",
+          "RowNumber": 1,
+          "RowSpan": 1,
+          "Settings": [],
+          "Versions": []
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "62d6b4fb-b9ce-4f1f-9ff3-b7e3f8c2cfd7",
+          "Name": "IsAutoRenewablepartner",
+          "ColumnNumber": 2,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.BooleanEditorToBooleanBinder",
+          "ParentGuid": "73e9df7c-895e-4811-b3d5-76c6f95b87aa",
+          "PropertyGuid": "9ea6f8cb-f4d6-4527-9e51-095b2b51d619",
+          "RowNumber": 1,
+          "RowSpan": 1,
+          "Settings": [],
+          "Versions": []
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "61dfdc77-1188-4789-829d-c4badfd8655c",
+          "Name": "RemindPriorDayspartner",
+          "ColumnNumber": 2,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.NumericEditorToIntAndDoubleBinder",
+          "ParentGuid": "73e9df7c-895e-4811-b3d5-76c6f95b87aa",
+          "PropertyGuid": "c639b6ee-6b53-44b1-a68c-fb5ffc1d0e7d",
+          "RowNumber": 0,
+          "RowSpan": 1,
+          "Settings": [],
+          "Versions": []
+        },
+        {
           "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
           "NameGuid": "fc50c888-3155-4ff1-96e8-ff7064894ead",
           "Name": "Namepartner",
@@ -147,6 +254,19 @@
           "RowNumber": 5,
           "RowSpan": 1,
           "Settings": []
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "9e7c70f5-2b4c-4caf-8767-e1c01863dd35",
+          "Name": "Controlpartner",
+          "ColumnNumber": 0,
+          "ColumnSpan": 2,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
+          "ParentGuid": "73e9df7c-895e-4811-b3d5-76c6f95b87aa",
+          "PropertyGuid": "d877c685-f2a0-418e-a927-905fc536cbeb",
+          "RowNumber": 2,
+          "RowSpan": 1,
+          "Settings": []
         }
       ],
       "IsAncestorMetadata": true,
@@ -201,6 +321,14 @@
       "IsRequired": true,
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
       "PreviousPropertyGuid": "c639b6ee-6b53-44b1-a68c-fb5ffc1d0e7d"
+    },
+    {
+      "$type": "Sungero.Metadata.StringPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "d877c685-f2a0-418e-a927-905fc536cbeb",
+      "Name": "NDSpartner",
+      "Code": "NDSpartner1",
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
+      "PreviousPropertyGuid": "bfa8ddd3-9b19-4c16-b651-e288f4101cca"
     }
   ],
   "PublicStructures": [],

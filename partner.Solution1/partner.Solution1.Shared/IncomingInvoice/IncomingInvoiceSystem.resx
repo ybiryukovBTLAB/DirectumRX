@@ -300,4 +300,10 @@
   <data name="Property_PaymentDatepartner" xml:space="preserve">
     <value>Дата оплаты</value>
   </data>
+  <data name="Property_SkipContractpartner" xml:space="preserve">
+    <value>Skip contract</value>
+  </data>
+  <data name="Property_ContractStatepartner" xml:space="preserve">
+    <value>Contract state</value>
+  </data>
 </root>

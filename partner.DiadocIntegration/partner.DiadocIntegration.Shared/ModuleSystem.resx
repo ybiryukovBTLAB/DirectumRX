@@ -123,4 +123,10 @@
   <data name="CoverTitle" xml:space="preserve">
     <value>DiadocIntegration</value>
   </data>
+  <data name="JobDisplayName_d076e8e0e9cd4702870e9c67ca37cf3b" xml:space="preserve">
+    <value>Redirect documents from Diadoc</value>
+  </data>
+  <data name="JobDescription_d076e8e0e9cd4702870e9c67ca37cf3b" xml:space="preserve">
+    <value>Redirect documents from Diadoc</value>
+  </data>
 </root>

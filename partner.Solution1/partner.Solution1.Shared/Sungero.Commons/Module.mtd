@@ -1,0 +1,72 @@
+{
+  "$type": "Sungero.Metadata.LayerModuleMetadata, Sungero.Metadata",
+  "NameGuid": "73a82cee-65ba-42d8-bffa-f5db233602f2",
+  "Name": "Commons",
+  "AssociatedGuid": "51b4052e-5e7b-4f16-b09e-42f03f5b4f9f",
+  "AsyncHandlers": [],
+  "BaseGuid": "459fa497-ee5b-49a4-9980-de00cada9b7a",
+  "ClientBaseAssemblyName": "partner.Solution1.ClientBase",
+  "ClientBaseNamespace": "partner.Solution1.Module.Commons.ClientBase",
+  "Code": "Commons",
+  "CompanyCode": "Sungero",
+  "Cover": {
+    "NameGuid": "d4c0d93c-8e47-4d87-8887-93ea823aa01f",
+    "Actions": [
+      {
+        "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
+        "NameGuid": "73c2ee10-0b5e-420d-9a71-b5012b2bf23d",
+        "Name": "ShowVATRates",
+        "EntityTypeId": "fe0ed345-5965-40d6-a559-24dcde189a95",
+        "GroupId": "056413d6-d13e-41cf-a4e3-1b05196c4d4f",
+        "IsAncestorMetadata": true,
+        "Overridden": [
+          "IsVisible",
+          "EntityTypeId"
+        ],
+        "PreviousItemGuid": "532a3286-089e-4996-8b7e-029fc1a5ef88"
+      }
+    ],
+    "Groups": [
+      {
+        "NameGuid": "056413d6-d13e-41cf-a4e3-1b05196c4d4f",
+        "Name": "Info",
+        "BackgroundPosition": "Stretch",
+        "IconName": "GroupIconInfo_056413d6d13e41cfa4e31b05196c4d4f.png",
+        "IsAncestorMetadata": true,
+        "Overridden": [
+          "IsVisible"
+        ],
+        "PreviousItemGuid": "00df3aee-c8d5-4194-a21b-a4617a8e53e0",
+        "Versions": []
+      }
+    ],
+    "IsAncestorMetadata": true,
+    "Overridden": [
+      "Actions",
+      "Groups"
+    ],
+    "Versions": []
+  },
+  "ExplorerTreeOrder": [],
+  "IconResourcesKeys": [],
+  "Importance": "Low",
+  "LayeredFromGuid": "459fa497-ee5b-49a4-9980-de00cada9b7a",
+  "NeedResetAppliedCache": true,
+  "PublicStructures": [],
+  "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "ResourceInterfaceNamespace": "partner.Solution1.Module.Commons",
+  "ResourcesKeys": [],
+  "SpecialFolders": [],
+  "Version": "4.0.36.0",
+  "Widgets": [],
+  "Versions": [
+    {
+      "Type": "LayerModuleMetadata",
+      "Number": 6
+    },
+    {
+      "Type": "ModuleMetadata",
+      "Number": 6
+    }
+  ]
+}

@@ -117,4 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="JobDisplayName_d076e8e0e9cd4702870e9c67ca37cf3b" xml:space="preserve">
+    <value>Переадресация документов из Диадок</value>
+  </data>
+  <data name="JobDescription_d076e8e0e9cd4702870e9c67ca37cf3b" xml:space="preserve">
+    <value>Переадресация документов из Диадок</value>
+  </data>
 </root>

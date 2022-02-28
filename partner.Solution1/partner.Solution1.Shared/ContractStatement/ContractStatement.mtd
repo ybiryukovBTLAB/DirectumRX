@@ -299,7 +299,7 @@
           "ColumnSpan": 1,
           "GroupType": "WithTitleNoBorder",
           "ParentGuid": "01dd99f5-db49-480e-b699-28488f2653fb",
-          "RowNumber": 3,
+          "RowNumber": 2,
           "RowSpan": 1,
           "Versions": []
         },
@@ -670,20 +670,6 @@
         },
         {
           "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
-          "NameGuid": "29617fe4-9f5d-4859-bd72-4d0c10c7bb48",
-          "Name": "TableClientLinePartnerpartnerpartner",
-          "ColumnNumber": 0,
-          "ColumnSpan": 1,
-          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.GridControlToChildCollectionBinder",
-          "HeaderLocation": "Top",
-          "ParentGuid": "01dd99f5-db49-480e-b699-28488f2653fb",
-          "PropertyGuid": "1c14c442-f977-439a-adb3-4ed26486da5b",
-          "RowNumber": 2,
-          "RowSpan": 1,
-          "Settings": []
-        },
-        {
-          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
           "NameGuid": "fc2e58a7-4036-493c-b3f1-d638df683c91",
           "Name": "Synhronyse1Cpartnerpartner",
           "ColumnNumber": 0,
@@ -705,11 +691,40 @@
       "Versions": []
     }
   ],
+  "HandledEvents": [
+    "BeforeSaveServer"
+  ],
   "IconResourcesKeys": [],
   "LayeredFromGuid": "f2f5774d-5ca3-4725-b31d-ac618f6b8850",
   "OpenCardByDefaultInCollection": true,
   "OperationsClass": "",
   "Properties": [
+    {
+      "$type": "Sungero.Metadata.StringPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "263cf068-e224-4a83-9df0-198e828101d1",
+      "Name": "RegistrationNumber",
+      "HandledEvents": [
+        "ChangedShared"
+      ],
+      "IsAncestorMetadata": true,
+      "Overridden": [
+        "HandledEvents"
+      ],
+      "Versions": []
+    },
+    {
+      "$type": "Sungero.Metadata.DateTimePropertyMetadata, Sungero.Metadata",
+      "NameGuid": "3e55f091-41a4-4e58-a9c5-dbe90782ccec",
+      "Name": "RegistrationDate",
+      "HandledEvents": [
+        "ChangedShared"
+      ],
+      "IsAncestorMetadata": true,
+      "Overridden": [
+        "HandledEvents"
+      ],
+      "Versions": []
+    },
     {
       "$type": "Sungero.Metadata.CollectionPropertyMetadata, Sungero.Metadata",
       "NameGuid": "56cbe741-880f-4e6f-9567-343d08494b59",

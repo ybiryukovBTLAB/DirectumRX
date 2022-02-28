@@ -297,4 +297,13 @@
   <data name="Property_Synhronyse1Cpartner" xml:space="preserve">
     <value>Разрешить выгрузку в 1С</value>
   </data>
+  <data name="Property_Originalpartner" xml:space="preserve">
+    <value>Оригинал получен</value>
+  </data>
+  <data name="Property_NDSpartner" xml:space="preserve">
+    <value>НДС</value>
+  </data>
+  <data name="Property_Propertypartner" xml:space="preserve">
+    <value />
+  </data>
 </root>

@@ -7,8 +7,4 @@ using partner.Solution1.AccountingDocumentBase;
 
 namespace partner.Solution1
 {
-  partial class AccountingDocumentBaseSharedHandlers
-  {
-
-  }
 }

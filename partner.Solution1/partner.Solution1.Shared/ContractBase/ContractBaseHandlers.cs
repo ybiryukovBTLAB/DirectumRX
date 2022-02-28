@@ -7,8 +7,5 @@ using partner.Solution1.ContractBase;
 
 namespace partner.Solution1
 {
-  partial class ContractBaseSharedHandlers
-  {
 
-  }
 }

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -7,4 +7,14 @@ using partner.Solution1.IncomingInvoice;
 
 namespace partner.Solution1
 {
+  partial class IncomingInvoiceServerHandlers
+  {
+    
+
+    public override void BeforeSave(Sungero.Domain.BeforeSaveEventArgs e)
+    {
+      base.BeforeSave(e);
+    }
+  }
+
 }

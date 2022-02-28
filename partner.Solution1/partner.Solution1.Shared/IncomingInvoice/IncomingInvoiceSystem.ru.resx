@@ -294,4 +294,10 @@
   <data name="Resource_4628212b0304439ab3fb29f0a1ea289e" xml:space="preserve">
     <value />
   </data>
+  <data name="Property_SkipContractpartner" xml:space="preserve">
+    <value>Не заполнять договор</value>
+  </data>
+  <data name="Property_ContractStatepartner" xml:space="preserve">
+    <value>Статус договора</value>
+  </data>
 </root>

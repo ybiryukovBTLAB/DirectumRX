@@ -1,0 +1,46 @@
+{
+  "$type": "Sungero.Metadata.LayerModuleMetadata, Sungero.Metadata",
+  "NameGuid": "b0c9c4cd-2bee-49ab-ad30-bb544d630d8e",
+  "Name": "Company",
+  "AssociatedGuid": "51b4052e-5e7b-4f16-b09e-42f03f5b4f9f",
+  "AsyncHandlers": [
+    {
+      "NameGuid": "dbbabb31-4c23-4551-8687-c153d2051620",
+      "Name": "UpdateEmployeeName",
+      "DelayPeriod": 15,
+      "DelayStrategy": "ExponentialDelayStrategy",
+      "IsAncestorMetadata": true,
+      "Parameters": [
+        {
+          "NameGuid": "3c07eb9e-b2e7-4961-afe8-cef592ab8e48",
+          "Name": "PersonId",
+          "ParameterType": "Integer"
+        }
+      ]
+    }
+  ],
+  "BaseGuid": "d534e107-a54d-48ec-85ff-bc44d731a82f",
+  "ClientBaseAssemblyName": "partner.Solution1.ClientBase",
+  "ClientBaseNamespace": "partner.Solution1.Module.Company.ClientBase",
+  "Code": "Company",
+  "CompanyCode": "Sungero",
+  "ExplorerTreeOrder": [],
+  "Importance": "Medium",
+  "LayeredFromGuid": "d534e107-a54d-48ec-85ff-bc44d731a82f",
+  "PublicStructures": [],
+  "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "ResourceInterfaceNamespace": "partner.Solution1.Module.Company",
+  "SpecialFolders": [],
+  "Version": "4.0.36.0",
+  "Widgets": [],
+  "Versions": [
+    {
+      "Type": "LayerModuleMetadata",
+      "Number": 6
+    },
+    {
+      "Type": "ModuleMetadata",
+      "Number": 6
+    }
+  ]
+}
