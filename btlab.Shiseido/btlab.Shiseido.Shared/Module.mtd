@@ -1,0 +1,178 @@
+{
+  "$type": "Sungero.Metadata.SolutionMetadata, Sungero.Metadata",
+  "NameGuid": "27739435-15b1-4886-8330-30b98d33d44f",
+  "Name": "Shiseido",
+  "AsyncHandlers": [],
+  "ClientAssemblyName": "btlab.Shiseido.Client",
+  "ClientBaseAssemblyName": "btlab.Shiseido.ClientBase",
+  "ClientBaseNamespace": "btlab.Shiseido.ClientBase",
+  "ClientNamespace": "btlab.Shiseido.Client",
+  "Code": "Shiseid",
+  "CompanyCode": "btlab",
+  "Cover": {
+    "NameGuid": "7ff0f252-d0e1-435a-8a51-9a3267823c7d",
+    "Actions": [],
+    "Background": null,
+    "Footer": {
+      "NameGuid": "a0e1bb9f-b8f4-4683-b515-8c96e5afcb86",
+      "BackgroundPosition": "Stretch"
+    },
+    "Groups": [],
+    "Header": {
+      "NameGuid": "88c4c5e3-6821-4dc9-a120-85c4ea949602",
+      "BackgroundPosition": "Stretch"
+    }
+  },
+  "DesktopViews": [],
+  "ExplorerTreeOrder": [
+    {
+      "ItemId": "d23185d4-f099-4021-8398-443ac0fa760b"
+    },
+    {
+      "ItemId": "26db6a1f-5e06-4063-8ca7-47b068998995",
+      "PreviousItemId": "d23185d4-f099-4021-8398-443ac0fa760b"
+    },
+    {
+      "ItemId": "d952dc8a-3743-4fe7-98b3-65b66b0b3cfd",
+      "PreviousItemId": "26db6a1f-5e06-4063-8ca7-47b068998995"
+    },
+    {
+      "ItemId": "77251454-4b80-4787-a6e7-166a13829253",
+      "PreviousItemId": "d952dc8a-3743-4fe7-98b3-65b66b0b3cfd"
+    },
+    {
+      "ItemId": "2f5529de-e6b4-479c-9f84-b864302aaf13",
+      "PreviousItemId": "77251454-4b80-4787-a6e7-166a13829253"
+    },
+    {
+      "ItemId": "b2bfe1ef-26e9-4a53-a710-b4f4109181af",
+      "PreviousItemId": "2f5529de-e6b4-479c-9f84-b864302aaf13"
+    },
+    {
+      "ItemId": "50418b35-dc0c-4c66-bd87-eebab3a68d8c",
+      "PreviousItemId": "b2bfe1ef-26e9-4a53-a710-b4f4109181af"
+    },
+    {
+      "ItemId": "e25b9816-00e9-45e2-b1ee-c8d38fbd2986",
+      "PreviousItemId": "50418b35-dc0c-4c66-bd87-eebab3a68d8c"
+    },
+    {
+      "ItemId": "f4c42dba-9eb7-4ea7-8c4b-6353140f50e3",
+      "PreviousItemId": "e25b9816-00e9-45e2-b1ee-c8d38fbd2986"
+    },
+    {
+      "ItemId": "fb5cd270-4f83-4bee-97b6-5f058a33a5b6",
+      "PreviousItemId": "f4c42dba-9eb7-4ea7-8c4b-6353140f50e3"
+    },
+    {
+      "ItemId": "da3f0942-fe07-46ac-8618-ad7c95258108",
+      "PreviousItemId": "fb5cd270-4f83-4bee-97b6-5f058a33a5b6"
+    },
+    {
+      "ItemId": "44615e26-88d7-41d8-91c4-ba393aa9faee",
+      "PreviousItemId": "da3f0942-fe07-46ac-8618-ad7c95258108"
+    },
+    {
+      "ItemId": "4d357407-e750-4952-bf56-3aabb9b69eed",
+      "PreviousItemId": "44615e26-88d7-41d8-91c4-ba393aa9faee"
+    },
+    {
+      "ItemId": "3daad16f-534a-49fa-b058-7f9fbac62b56",
+      "PreviousItemId": "4d357407-e750-4952-bf56-3aabb9b69eed"
+    },
+    {
+      "ItemId": "f9b9e130-804d-43d6-9cdc-580947064191",
+      "PreviousItemId": "3daad16f-534a-49fa-b058-7f9fbac62b56"
+    },
+    {
+      "ItemId": "8d7b6f07-d078-40ac-a0d9-496136d2b0d2",
+      "PreviousItemId": "f9b9e130-804d-43d6-9cdc-580947064191"
+    },
+    {
+      "ItemId": "10ccff8a-ea2f-4246-8807-850b8e9ee737",
+      "PreviousItemId": "8d7b6f07-d078-40ac-a0d9-496136d2b0d2"
+    },
+    {
+      "ItemId": "9489961d-9175-49ed-82aa-c1f84bd3c2e1",
+      "PreviousItemId": "10ccff8a-ea2f-4246-8807-850b8e9ee737"
+    },
+    {
+      "ItemId": "f37d8063-9039-46d6-bcdf-d6f2ab4f0c83",
+      "PreviousItemId": "9489961d-9175-49ed-82aa-c1f84bd3c2e1"
+    },
+    {
+      "ItemId": "e8eaa77f-3624-4a7d-ae01-f01707a12c3d",
+      "PreviousItemId": "f37d8063-9039-46d6-bcdf-d6f2ab4f0c83"
+    },
+    {
+      "ItemId": "4b5829c3-c6c3-42c1-ac71-f78858ef395e",
+      "PreviousItemId": "e8eaa77f-3624-4a7d-ae01-f01707a12c3d"
+    },
+    {
+      "ItemId": "f504ca7b-00ea-4ec2-a92c-c715f856146a",
+      "PreviousItemId": "4b5829c3-c6c3-42c1-ac71-f78858ef395e"
+    },
+    {
+      "ItemId": "d8a24c5d-0128-4090-a258-9507285f129f",
+      "PreviousItemId": "f504ca7b-00ea-4ec2-a92c-c715f856146a"
+    },
+    {
+      "ItemId": "5ff4f16b-87b6-4e66-8d72-9e7f4e9bd0cb",
+      "PreviousItemId": "d8a24c5d-0128-4090-a258-9507285f129f"
+    },
+    {
+      "ItemId": "2b1a363b-a02e-4344-a97d-50ed400bbee2",
+      "PreviousItemId": "5ff4f16b-87b6-4e66-8d72-9e7f4e9bd0cb"
+    },
+    {
+      "ItemId": "8895d8e7-e19a-47e2-8365-a7bda34ccc32",
+      "PreviousItemId": "2b1a363b-a02e-4344-a97d-50ed400bbee2"
+    },
+    {
+      "ItemId": "9a6e9a2d-6bac-4c4a-8ef1-0f2a7b059885",
+      "PreviousItemId": "8895d8e7-e19a-47e2-8365-a7bda34ccc32"
+    },
+    {
+      "ItemId": "2b17d11f-b1fa-43e7-86c6-4e283a5d1136",
+      "PreviousItemId": "9a6e9a2d-6bac-4c4a-8ef1-0f2a7b059885"
+    },
+    {
+      "ItemId": "9ca82bad-32a3-4fcf-941b-696fe2e90a39",
+      "PreviousItemId": "2b17d11f-b1fa-43e7-86c6-4e283a5d1136"
+    },
+    {
+      "ItemId": "2b588f3c-d1b3-4c73-acb5-cc80431d7bd1",
+      "PreviousItemId": "9ca82bad-32a3-4fcf-941b-696fe2e90a39"
+    }
+  ],
+  "IconResourcesKeys": [],
+  "Importance": "Medium",
+  "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "InterfaceNamespace": "btlab.Shiseido",
+  "OrderedSpecialFolders": [],
+  "PublicStructures": [],
+  "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "ResourceInterfaceNamespace": "btlab.Shiseido",
+  "ResourcesKeys": [],
+  "ServerAssemblyName": "btlab.Shiseido.Server",
+  "ServerNamespace": "btlab.Shiseido.Server",
+  "SharedAssemblyName": "btlab.Shiseido.Shared",
+  "SharedNamespace": "btlab.Shiseido.Shared",
+  "SpecialFolders": [],
+  "Version": "0.0.1.8",
+  "Widgets": [],
+  "Versions": [
+    {
+      "Type": "SolutionMetadata",
+      "Number": 6
+    },
+    {
+      "Type": "ModuleMetadata",
+      "Number": 6
+    },
+    {
+      "Type": "DomainApi",
+      "Number": 3
+    }
+  ]
+}
