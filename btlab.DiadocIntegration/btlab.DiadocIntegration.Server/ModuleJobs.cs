@@ -167,7 +167,8 @@ namespace btlab.DiadocIntegration.Server
       }
       
       Log("isUpd="+isUpd);
-      if(isUpd){
+      var isAct = btlab.Shiseido.ContractStatements.Is(doc);
+      if(!isAct){
         return;
       }
       
@@ -389,6 +390,8 @@ namespace btlab.DiadocIntegration.Server
          Log($"status={incInvResult.StatusCode} resp={responseString}");
          return;
        }
+       doc.WasExportedTo1c = true;
+       doc.Save();
        Log("003");
        var result = GetDeserializeData(responseString);
        Log("004");
@@ -409,23 +412,44 @@ namespace btlab.DiadocIntegration.Server
     public virtual void IncomingInvoiceJob()
     {
      Log($"========= IncomingInvoiceJob: {Calendar.Now} =========");
-     try{
+     try{/*
+         var d = btlab.Shiseido.IncomingInvoices.Get(815);
+         if(d.Synhronyse1C.HasValue && d.Synhronyse1C.Value == true){
+            Log($"Synhronyse1C={d.Synhronyse1C}");
+           if(!d.WasExportedTo1c.HasValue || d.WasExportedTo1c.Value == false){
+              Log($"WasExportedTo1c={d.WasExportedTo1c}");
+              if(!docIsLocked(d)){
+                ExportIncomingInvoiceDocTo1c(d);
+              }else{
+                Log($"docIsLocked={docIsLocked(d)}");
+              }
+           }else{
+             Log("WasExportedTo1c=True");
+           }
+         }else{
+           Log("Synhronyse1C=False");
+         }
+         */
          
-         //var doc = btlab.Shiseido.IncomingInvoices.Get(723);
-         //ExportIncomingInvoiceDocTo1c(doc);
          var incInvDocs = btlab.Shiseido.IncomingInvoices.GetAll()
            .Where(d => d.Synhronyse1C.HasValue && d.Synhronyse1C.Value == true)
+           .Where(d => !d.WasExportedTo1c.HasValue || d.WasExportedTo1c.Value == false)
+           .Where(d => !docIsLocked(d))
            .ToArray();
          foreach(var doc in incInvDocs){
            Log($"doc={doc.Id}");
            ExportIncomingInvoiceDocTo1c(doc);
          }
-         
         
      }catch(Exception e){
        Log($"IncomingInvoiceJob: err= {e.Message+Environment.NewLine+e.StackTrace}");
      }
     
+    }
+    
+    private bool docIsLocked(Sungero.Content.IElectronicDocument doc){
+      var lockInfo = Locks.GetLockInfo(doc);
+      return lockInfo != null && lockInfo.IsLockedByOther;
     }
     
     private string GetRightValue(string key, string value){
@@ -626,34 +650,10 @@ namespace btlab.DiadocIntegration.Server
     public virtual void TestJob()
     {
       try{
-        /*
-        Log("");
-        Log("");
-        Log("");
+        
         Log("=========TestJob: "+Calendar.Now+"=========");
-        var filterData = new Dictionary<string, string> {
-           {"ИНН", "7799543097"},
-           {"КПП", "779901001"}
-        };
-        var contractorData = GetObjData("Catalog_Контрагенты", filterData);
-        */
-        Log("=========TestJob: "+Calendar.Now+"=========");
-       /*
-         var doc = btlab.Shiseido.IncomingInvoices.Get(533);
-         
-         doc.Number = "40702810000000000007";
-         doc.Save();
-        */
-        var doc = btlab.Shiseido.ContractStatements.Get(687);
-        var arr = doc.Relations.GetRelatedFrom().ToArray();
-        var relatedDocs = new List<Sungero.Content.IElectronicDocument>(arr);
-        foreach(var r in arr){
-          relatedDocs.AddRange(r.Relations.GetRelated().ToArray());
-        }
-        //var dd = GetLog(doc);
-        foreach(var d in relatedDocs){
-          Log($"doc={d.Id} type={d.GetType().FullName}");
-        }
+       var d = btlab.Shiseido.IncomingInvoices.Get(775);
+       d.WasExportedTo1c = false;
        
       } catch(Exception ex){
         Log("err="+ex.Message+Environment.NewLine+ex.StackTrace);
