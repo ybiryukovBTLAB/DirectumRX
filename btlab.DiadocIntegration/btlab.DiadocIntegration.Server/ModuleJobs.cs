@@ -42,9 +42,9 @@ namespace btlab.DiadocIntegration.Server
      Log($"========= ReceiptGoodsServicesJob: {Calendar.Now} =========");
       try{
         var closingDocs = new List<btlab.Shiseido.IAccountingDocumentBase>();
-        closingDocs.AddRange(btlab.Shiseido.ContractStatements.GetAll());//Акт
-        closingDocs.AddRange(btlab.Shiseido.UniversalTransferDocuments.GetAll());//УПД
-        closingDocs.AddRange(btlab.Shiseido.Waybills.GetAll());//Накладная
+        closingDocs.AddRange(btlab.Shiseido.ContractStatements.GetAll().ToArray());//Акт
+        closingDocs.AddRange(btlab.Shiseido.UniversalTransferDocuments.GetAll().ToArray());//УПД
+        closingDocs.AddRange(btlab.Shiseido.Waybills.GetAll().ToArray());//Накладная
         
         var docs = closingDocs
           .Where(d => d.Synhronyse1C.HasValue && d.Synhronyse1C.Value == true);
@@ -413,7 +413,10 @@ namespace btlab.DiadocIntegration.Server
          
          //var doc = btlab.Shiseido.IncomingInvoices.Get(723);
          //ExportIncomingInvoiceDocTo1c(doc);
-         foreach(var doc in btlab.Shiseido.IncomingInvoices.GetAll()){
+         var incInvDocs = btlab.Shiseido.IncomingInvoices.GetAll()
+           .Where(d => d.Synhronyse1C.HasValue && d.Synhronyse1C.Value == true)
+           .ToArray();
+         foreach(var doc in incInvDocs){
            Log($"doc={doc.Id}");
            ExportIncomingInvoiceDocTo1c(doc);
          }
