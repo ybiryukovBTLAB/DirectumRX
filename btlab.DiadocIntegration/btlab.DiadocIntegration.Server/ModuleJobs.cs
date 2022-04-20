@@ -41,16 +41,26 @@ namespace btlab.DiadocIntegration.Server
     {
      Log($"========= ReceiptGoodsServicesJob: {Calendar.Now} =========");
       try{
-        foreach(var doc in btlab.Shiseido.ContractStatements.GetAll()){//Акт
-         Log($"==== Акт: {doc.Id} ===");
-          ExportClosingDocTo1c(doc);
-        }
-        foreach(var doc in btlab.Shiseido.UniversalTransferDocuments.GetAll()){//УПД
-         Log($"=== УПД: {doc.Id} ===");
-          ExportClosingDocTo1c(doc);
-        }
-        foreach(var doc in btlab.Shiseido.Waybills.GetAll()){//Накладная
-         Log($"=== Накладная: {doc.Id} ===");
+        var closingDocs = new List<btlab.Shiseido.IAccountingDocumentBase>();
+        closingDocs.AddRange(btlab.Shiseido.ContractStatements.GetAll());//Акт
+        closingDocs.AddRange(btlab.Shiseido.UniversalTransferDocuments.GetAll());//УПД
+        closingDocs.AddRange(btlab.Shiseido.Waybills.GetAll());//Накладная
+        
+        var docs = closingDocs
+          .Where(d => d.Synhronyse1C.HasValue && d.Synhronyse1C.Value == true);
+        
+        foreach(var doc in docs){
+          if(btlab.Shiseido.ContractStatements.Is(doc)){
+            Log($"=== Акт: {doc.Id} ===");
+          }else
+          if(btlab.Shiseido.UniversalTransferDocuments.Is(doc)){
+            Log($"=== УПД: {doc.Id} ===");
+          }else
+          if(btlab.Shiseido.Waybills.Is(doc)){
+            Log($"=== Накладная: {doc.Id} ===");
+          }else{
+            Log($"=== Неведомый: {doc.Id} ===");
+          }
           ExportClosingDocTo1c(doc);
         }
        //var doc = btlab.Shiseido.ContractStatements.Get(687);
