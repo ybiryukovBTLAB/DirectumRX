@@ -1,0 +1,46 @@
+{
+  "$type": "Sungero.Metadata.LayerModuleMetadata, Sungero.Metadata",
+  "NameGuid": "e740fa6e-013f-45bd-af0f-852a35fb6e23",
+  "Name": "Company",
+  "AssociatedGuid": "27739435-15b1-4886-8330-30b98d33d44f",
+  "AsyncHandlers": [
+    {
+      "NameGuid": "dbbabb31-4c23-4551-8687-c153d2051620",
+      "Name": "UpdateEmployeeName",
+      "DelayPeriod": 15,
+      "DelayStrategy": "ExponentialDelayStrategy",
+      "IsAncestorMetadata": true,
+      "Parameters": [
+        {
+          "NameGuid": "3c07eb9e-b2e7-4961-afe8-cef592ab8e48",
+          "Name": "PersonId",
+          "ParameterType": "Integer"
+        }
+      ]
+    }
+  ],
+  "BaseGuid": "d534e107-a54d-48ec-85ff-bc44d731a82f",
+  "ClientBaseAssemblyName": "btlab.Shiseido.ClientBase",
+  "ClientBaseNamespace": "btlab.Shiseido.Module.Company.ClientBase",
+  "Code": "Company",
+  "CompanyCode": "Sungero",
+  "ExplorerTreeOrder": [],
+  "Importance": "Medium",
+  "LayeredFromGuid": "d534e107-a54d-48ec-85ff-bc44d731a82f",
+  "PublicStructures": [],
+  "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "ResourceInterfaceNamespace": "btlab.Shiseido.Module.Company",
+  "SpecialFolders": [],
+  "Version": "4.2.27.0",
+  "Widgets": [],
+  "Versions": [
+    {
+      "Type": "LayerModuleMetadata",
+      "Number": 6
+    },
+    {
+      "Type": "ModuleMetadata",
+      "Number": 6
+    }
+  ]
+}
