@@ -39,7 +39,6 @@ namespace btlab.DiadocIntegration.Server
     /// </summary>
     public virtual void ReceiptGoodsServicesJob()
     {
-      
      Log($"========= ReceiptGoodsServicesJob: {Calendar.Now} =========");
       try{
         foreach(var doc in btlab.Shiseido.ContractStatements.GetAll()){//Акт
