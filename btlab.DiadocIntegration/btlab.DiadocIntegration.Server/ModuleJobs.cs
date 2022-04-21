@@ -196,13 +196,13 @@ namespace btlab.DiadocIntegration.Server
       Log($"Берем счет-фактуру={docs[0].Id}");
       var incInv = btlab.Shiseido.IncomingInvoices.As(docs[0]);
       data = new Dictionary<string,object>();
-      if(!string.IsNullOrEmpty(incInv.RegistrationNumber) && incInv.RegistrationDate.HasValue){
-        var regNum = incInv.RegistrationNumber;
+      if(/*!string.IsNullOrEmpty(incInv.RegistrationNumber) &&*/ incInv.RegistrationDate.HasValue){
+        //var regNum = incInv.RegistrationNumber;
         //var regNum = "T"+Calendar.Now.ToString("HHmmss");
-        data.Add("Number", regNum);
+        //data.Add("Number", regNum);
         data.Add("Date", incInv.RegistrationDate.Value.ToString(formatDate));
-        data.Add("НомерВходящегоДокумента", regNum);
-        data.Add("ДатаВходящегоДокумента", incInv.RegistrationDate.Value.ToString(formatDate));
+        //data.Add("НомерВходящегоДокумента", regNum);
+        //data.Add("ДатаВходящегоДокумента", incInv.RegistrationDate.Value.ToString(formatDate));
       }else{
         Log($"Нет регистрационного номера/даты в счет-фактуре");
       }
