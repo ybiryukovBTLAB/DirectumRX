@@ -432,13 +432,29 @@ namespace btlab.DiadocIntegration.Server
          */
          
          var incInvDocs = btlab.Shiseido.IncomingInvoices.GetAll()
-           .Where(d => d.Synhronyse1C.HasValue && d.Synhronyse1C.Value == true)
-           .Where(d => !d.WasExportedTo1c.HasValue || d.WasExportedTo1c.Value == false)
-           .Where(d => !docIsLocked(d))
+           //.ToArray()//Иначе ругается
+           //.Where(d => d.Synhronyse1C.HasValue && d.Synhronyse1C.Value == true)
+           //.Where(d => !d.WasExportedTo1c.HasValue || d.WasExportedTo1c.Value == false)
            .ToArray();
          foreach(var doc in incInvDocs){
-           Log($"doc={doc.Id}");
-           ExportIncomingInvoiceDocTo1c(doc);
+           Log($"=== Входящий счет: {doc.Id} ===");
+           Log($"Synhronyse1C={doc.Synhronyse1C}");
+              Log($"WasExportedTo1c={doc.WasExportedTo1c}");
+           if(doc.Synhronyse1C.HasValue && doc.Synhronyse1C.Value == true){
+              
+             if(!doc.WasExportedTo1c.HasValue || doc.WasExportedTo1c.Value == false){
+                
+                if(!docIsLocked(doc)){
+                  ExportIncomingInvoiceDocTo1c(doc);
+                }else{
+                  Log($"Документ заблокирован");
+                }
+             }else{
+                Log($"Уже был экспортирован в 1с={doc.WasExportedTo1c}");
+             }
+           }else{
+             Log($"Синхронизировать с 1с={doc.Synhronyse1C}");
+           }
          }
         
      }catch(Exception e){
@@ -652,9 +668,10 @@ namespace btlab.DiadocIntegration.Server
       try{
         
         Log("=========TestJob: "+Calendar.Now+"=========");
-       var d = btlab.Shiseido.IncomingInvoices.Get(775);
+       var d = btlab.Shiseido.IncomingInvoices.Get(813);
        d.WasExportedTo1c = false;
-       
+       d = btlab.Shiseido.IncomingInvoices.Get(814);
+       d.WasExportedTo1c = false;
       } catch(Exception ex){
         Log("err="+ex.Message+Environment.NewLine+ex.StackTrace);
       }
