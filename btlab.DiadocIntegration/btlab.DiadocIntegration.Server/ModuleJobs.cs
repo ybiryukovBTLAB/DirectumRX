@@ -186,7 +186,7 @@ namespace btlab.DiadocIntegration.Server
         allRelatedDocs.AddRange(r.Relations.GetRelated().ToArray());
       }
       var docs = allRelatedDocs
-        .Where(r => btlab.Shiseido.IncomingInvoices.Is(r))
+        .Where(r => Sungero.FinancialArchive.IncomingTaxInvoices.Is(r))
         .ToArray();
       
       if(docs.Length < 1){
@@ -194,7 +194,7 @@ namespace btlab.DiadocIntegration.Server
         return;
       }
       Log($"Берем счет-фактуру={docs[0].Id}");
-      var incInv = btlab.Shiseido.IncomingInvoices.As(docs[0]);
+      var incInv = Sungero.FinancialArchive.IncomingTaxInvoices.As(docs[0]);
       data = new Dictionary<string,object>();
       if(/*!string.IsNullOrEmpty(incInv.RegistrationNumber) &&*/ incInv.RegistrationDate.HasValue){
         //var regNum = incInv.RegistrationNumber;
