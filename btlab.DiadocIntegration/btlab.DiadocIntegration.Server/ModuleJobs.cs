@@ -120,6 +120,7 @@ namespace btlab.DiadocIntegration.Server
       var contractRef = GetContractRefFrom1c(doc.LeadingDocument);
       Log($"Ref договора: {contractRef}");
       var subject = doc.Subject;
+      var ourUnitRef = GetShiseidoOrgRef();
       
       var data = new Dictionary<string,object>();
       if(string.IsNullOrEmpty(doc.RegistrationNumber)){
@@ -132,6 +133,7 @@ namespace btlab.DiadocIntegration.Server
       //var docRegNum = "T"+Calendar.Now.ToString("HHmmss");
       //data.Add("Number", docRegNum);
       //data.Add("Date", doc.RegistrationDate.Value.ToString(formatDate));
+      data.Add("Организация@odata.bind", $"Catalog_Организации(guid'{ourUnitRef}')");
       data.Add("НомерВходящегоДокумента", docRegNum);
       data.Add("ДатаВходящегоДокумента", doc.RegistrationDate.Value.ToString(formatDate));
       data.Add("Склад@odata.bind", $"Catalog_Склады(guid'{GetCammonStorageRef()}')");
@@ -166,7 +168,7 @@ namespace btlab.DiadocIntegration.Server
       //  Log($"Не удалось получить нашу организацию");
       //}
       var docType = "StandardODATA.Document_ПоступлениеТоваровУслуг";
-      var statusDocResult = UpdateObjIn1c("InformationRegister_СтатусыДокументов", docRef, docType, data);
+      var statusDocResult = UpdateObjIn1c("InformationRegister_СтатусыДокументов", ourUnitRef, docRef, docType, data);
       responseString = statusDocResult.Content.ReadAsStringAsync().Result;
       if (statusDocResult.StatusCode != HttpStatusCode.OK)
       {
@@ -399,8 +401,7 @@ namespace btlab.DiadocIntegration.Server
          Log($"status={incInvResult.StatusCode} resp={responseString}");
          return;
        }
-       doc.WasExportedTo1c = true;
-       doc.Save();
+       SetDocumentWasExportedTo1c(doc);
        Log("003");
        var result = GetDeserializeData(responseString);
        Log("004");
@@ -415,6 +416,15 @@ namespace btlab.DiadocIntegration.Server
        Log("006");
        ConductIt("ПлатежноеПоручение", docRef);
     }
+    
+    private void SetDocumentWasExportedTo1c(btlab.Shiseido.IIncomingInvoice doc){
+      doc.SkipContract = true;
+      var contractControl = doc.State.Properties.Contract;
+      contractControl.IsEnabled = contractControl.IsRequired = false;
+      doc.WasExportedTo1c = true;
+      doc.Save();
+    }
+    
     /// <summary>
     /// 
     /// </summary>
@@ -608,13 +618,13 @@ namespace btlab.DiadocIntegration.Server
       return response.Result;
     }
     
-    private HttpResponseMessage UpdateObjIn1c(string objType, string docRef, string docType, Dictionary<string, object> requestData)
+    private HttpResponseMessage UpdateObjIn1c(string objType, string orgRef, string docRef, string docType, Dictionary<string, object> requestData)
     {
         var url = GetUrl();
         var userName = GetUserName();
         var pass = GetPass();
         Log("=== UpdateObjIn1c start "+Calendar.Now+" ===");
-        string requestUri = url + objType + $"(Организация_Key=guid'00000000-0000-0000-0000-000000000000', Документ=guid'{docRef}', Документ_Type='{docType}')";
+        string requestUri = url + objType + $"(Организация_Key=guid'{orgRef}', Документ=guid'{docRef}', Документ_Type='{docType}')";
         Log("requestUri="+requestUri);
         HttpClientHandler handler = new HttpClientHandler(){
             PreAuthenticate = true,

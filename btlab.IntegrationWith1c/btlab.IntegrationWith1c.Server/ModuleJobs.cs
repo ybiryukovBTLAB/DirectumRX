@@ -57,6 +57,8 @@ namespace btlab.IntegrationWith1c.Server
     {
       Logger.DebugFormat(btlab.IntegrationWith1c.Resources.ProcessingFile, file);
       
+      System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CreateSpecificCulture("ru-RU");
+      
       // Поиск платежя
       var lines = File.ReadAllLines(file);
       var paymentsList = new List<Structures.Module.IPaymentInfo>();
@@ -68,6 +70,18 @@ namespace btlab.IntegrationWith1c.Server
           paymentInfo = Structures.Module.PaymentInfo.Create();
           continue;
         }
+        // НазначениеПлатежа=
+        if (line.StartsWith(Constants.Module.PaymentInfoProperties.PaymentPurpose)) {
+          // Оплата по: СЧ <номер счета (может состоять из цифр, букв, специальных символов)> от: <дата счета>
+          var paymentPurpose = line.Substring(32, line.Length - 32);
+          var indexOf = paymentPurpose.LastIndexOf(" от: ");
+          if (indexOf > -1) {
+            paymentInfo.Number = paymentPurpose.Substring(0, indexOf);
+            paymentInfo.Date = DateTime.Parse(paymentPurpose.Substring(indexOf + 5, paymentPurpose.Length - indexOf - 5), culture);
+          }
+          continue;
+        }
+        /*
         // Номер=
         if (line.StartsWith(Constants.Module.PaymentInfoProperties.Number)) {
           paymentInfo.Number = line.Substring(6, line.Length - 6);
@@ -78,6 +92,7 @@ namespace btlab.IntegrationWith1c.Server
           paymentInfo.Date = DateTime.Parse(line.Substring(5, line.Length - 5));
           continue;
         }
+        */
         // Получатель=
         if (line.StartsWith(Constants.Module.PaymentInfoProperties.Recipient)) {
           paymentInfo.Recipient = line.Substring(11, line.Length - 11);

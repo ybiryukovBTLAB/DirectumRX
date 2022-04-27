@@ -19,6 +19,11 @@ namespace btlab.IntegrationWith1c.Constants
       public const string StartDocument = "СекцияДокумент";
       
       /// <summary>
+      /// Название свойства Назначение платежа
+      /// </summary>
+      public const string PaymentPurpose = "НазначениеПлатежа=";
+      
+      /// <summary>
       /// Название свойства Номер платежа
       /// </summary>
       public const string Number = "Номер=";
@@ -41,7 +46,7 @@ namespace btlab.IntegrationWith1c.Constants
       /// <summary>
       /// Название свойства ИНН
       /// </summary>
-      public const string TIN = "ПолучательИНН";
+      public const string TIN = "ПолучательИНН=";
       
       /// <summary>
       /// Название свойства КонецДокумента
