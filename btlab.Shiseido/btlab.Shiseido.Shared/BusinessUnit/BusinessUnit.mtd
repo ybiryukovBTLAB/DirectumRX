@@ -430,19 +430,6 @@
           "RowNumber": 0,
           "RowSpan": 1,
           "Settings": []
-        },
-        {
-          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
-          "NameGuid": "5b9bf65f-f9cd-4f02-806e-24d40b96feda",
-          "Name": "Id1c",
-          "ColumnNumber": 0,
-          "ColumnSpan": 1,
-          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
-          "ParentGuid": "f93b0d1d-c9e8-423e-8922-b103e17033b3",
-          "PropertyGuid": "0c1db72f-7e46-4b5f-bfee-c17035da5074",
-          "RowNumber": 0,
-          "RowSpan": 1,
-          "Settings": []
         }
       ],
       "IsAncestorMetadata": true,

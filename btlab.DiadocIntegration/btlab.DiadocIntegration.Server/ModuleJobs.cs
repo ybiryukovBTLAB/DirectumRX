@@ -31,6 +31,14 @@ namespace btlab.DiadocIntegration.Server
     private string GetFormatDate(){
       return "yyyy-MM-ddT00:00:00";
     }
+    
+    private string GetShiseidoOrgRef(){
+      return "b7befbac-a735-44a9-8de3-18e236cda461";
+    }
+    
+    private string GetCammonStorageRef(){
+      return "ba2e7c85-4c97-11e5-8953-00059a3c7800";
+    }
     //---
     
     
@@ -122,11 +130,11 @@ namespace btlab.DiadocIntegration.Server
       var formatDate = GetFormatDate();
       var docRegNum = doc.RegistrationNumber;
       //var docRegNum = "T"+Calendar.Now.ToString("HHmmss");
-      data.Add("Number", docRegNum);
-      data.Add("Date", doc.RegistrationDate.Value.ToString(formatDate));
+      //data.Add("Number", docRegNum);
+      //data.Add("Date", doc.RegistrationDate.Value.ToString(formatDate));
       data.Add("НомерВходящегоДокумента", docRegNum);
       data.Add("ДатаВходящегоДокумента", doc.RegistrationDate.Value.ToString(formatDate));
-      
+      data.Add("Склад@odata.bind", $"Catalog_Склады(guid'{GetCammonStorageRef()}')");
       if(!string.IsNullOrEmpty(contractorRef)){
         data.Add("Контрагент@odata.bind", $"Catalog_Контрагенты(guid'{contractorRef}')");
       }
@@ -242,7 +250,8 @@ namespace btlab.DiadocIntegration.Server
        var subject = doc.Subject;
        //var docRegDate = doc.RegistrationDate;
        //var docRegNum = doc.RegistrationNumber;
-       var ourUnitRef = btlab.Shiseido.BusinessUnits.As(doc.BusinessUnit)?.Id1c;
+       //var ourUnitRef = btlab.Shiseido.BusinessUnits.As(doc.BusinessUnit)?.Id1c;
+       var ourUnitRef = GetShiseidoOrgRef();
       
        if(string.IsNullOrEmpty(inn) || string.IsNullOrEmpty(trrc) || string.IsNullOrEmpty(bankAccNum)){
          Log($"Не все рекомендованные данные заполнены: inn={inn}, trrc={trrc}, bankAccNum={bankAccNum}.");
