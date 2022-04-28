@@ -129,24 +129,6 @@
   <data name="JobDescription_f315f75e0704421387723685076769cc" xml:space="preserve">
     <value>Redirect documents from Diadoc</value>
   </data>
-  <data name="JobDisplayName_c74edd56b450407bb9bb766b5bac59d2" xml:space="preserve">
-    <value>TestJob</value>
-  </data>
-  <data name="JobDescription_c74edd56b450407bb9bb766b5bac59d2" xml:space="preserve">
-    <value>TestJob</value>
-  </data>
-  <data name="JobDisplayName_3da36487aed14e10a751e6cdab06cacc" xml:space="preserve">
-    <value>Экспорт ПоступлениеТоваровУслуг</value>
-  </data>
-  <data name="JobDisplayName_eb2fe8bbe2974214afb60485f390df9c" xml:space="preserve">
-    <value>Экспорт ПлатежногоПоручения</value>
-  </data>
-  <data name="JobDescription_eb2fe8bbe2974214afb60485f390df9c" xml:space="preserve">
-    <value>Экспорт ПлатежногоПоручения</value>
-  </data>
-  <data name="JobDescription_3da36487aed14e10a751e6cdab06cacc" xml:space="preserve">
-    <value>Экспорт ПоступлениеТоваровУслуг</value>
-  </data>
   <data name="CoverGroup_Dictionaries" xml:space="preserve">
     <value>Dictionaries</value>
   </data>

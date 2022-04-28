@@ -147,4 +147,22 @@
   <data name="CoverDescription_UpdatePaymentsSettings" xml:space="preserve">
     <value>Show settings for update payments list.</value>
   </data>
+  <data name="JobDisplayName_86772d3006664693a0b2d2f449479ca7" xml:space="preserve">
+    <value>Экспорт ПоступлениеТоваровУслуг</value>
+  </data>
+  <data name="JobDescription_86772d3006664693a0b2d2f449479ca7" xml:space="preserve">
+    <value>Экспорт ПоступлениеТоваровУслуг</value>
+  </data>
+  <data name="JobDisplayName_c391c81d679e4c42b3d86eb3750d188e" xml:space="preserve">
+    <value>Экспорт ПлатежногоПоручения</value>
+  </data>
+  <data name="JobDescription_c391c81d679e4c42b3d86eb3750d188e" xml:space="preserve">
+    <value>Экспорт ПлатежногоПоручения</value>
+  </data>
+  <data name="CoverAction_OdataSettings" xml:space="preserve">
+    <value>Odata settings</value>
+  </data>
+  <data name="CoverDescription_OdataSettings" xml:space="preserve">
+    <value />
+  </data>
 </root>

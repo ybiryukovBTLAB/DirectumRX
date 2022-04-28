@@ -14,6 +14,14 @@
     "Actions": [
       {
         "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
+        "NameGuid": "555fd06a-a776-42e7-8122-84966f858bec",
+        "Name": "OdataSettings",
+        "EntityTypeId": "178a5d97-2edf-421c-b4a5-d4a040f9e8b9",
+        "GroupId": "ec2cc246-26e5-4c87-90b5-da0577394ae7",
+        "PreviousItemGuid": "c8c93ccd-bb32-4013-bb6e-28be5d424c84"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
         "NameGuid": "c0aa7574-3829-4ba8-89a7-4b51764d1ae5",
         "Name": "NdsDatabook",
         "EntityTypeId": "9bff26a6-cc64-453d-b9ba-cc34098d1ffb",
@@ -71,6 +79,10 @@
     {
       "ItemId": "b31c197a-3406-487f-82a2-5564357e33b2",
       "PreviousItemId": "9bff26a6-cc64-453d-b9ba-cc34098d1ffb"
+    },
+    {
+      "ItemId": "178a5d97-2edf-421c-b4a5-d4a040f9e8b9",
+      "PreviousItemId": "b31c197a-3406-487f-82a2-5564357e33b2"
     }
   ],
   "IconResourcesKeys": [],
@@ -85,9 +97,45 @@
       "GenerateHandler": true,
       "MonthSchedule": "Monthly",
       "TimePeriod": 15
+    },
+    {
+      "NameGuid": "86772d30-0666-4693-a0b2-d2f449479ca7",
+      "Name": "ReceiptGoodsServicesJob",
+      "Daily": "Repeat",
+      "GenerateHandler": true,
+      "MonthSchedule": "Monthly",
+      "TimePeriod": 15
+    },
+    {
+      "NameGuid": "c391c81d-679e-4c42-b3d8-6eb3750d188e",
+      "Name": "IncomingInvoiceJob",
+      "Daily": "Repeat",
+      "GenerateHandler": true,
+      "MonthSchedule": "Monthly",
+      "TimePeriod": 15
+    }
+  ],
+  "Libraries": [
+    {
+      "NameGuid": "79da706d-d2ba-46ae-8a6c-b7f9bf73d53d",
+      "Name": "Newtonsoft",
+      "Scope": "Both"
     }
   ],
   "PublicStructures": [
+    {
+      "Name": "ODataSetting",
+      "IsPublic": true,
+      "Properties": [
+        {
+          "Name": "Data",
+          "IsEntity": true,
+          "IsNullable": true,
+          "TypeFullName": "global::btlab.IntegrationWith1c.IOdataSetting"
+        }
+      ],
+      "StructureNamespace": "btlab.IntegrationWith1c.Structures.Module"
+    },
     {
       "Name": "PaymentInfo",
       "IsPublic": true,

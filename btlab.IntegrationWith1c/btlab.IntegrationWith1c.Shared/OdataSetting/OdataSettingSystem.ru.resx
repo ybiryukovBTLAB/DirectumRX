@@ -117,31 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CoverAction_NdsDatabook" xml:space="preserve">
-    <value>Справочник НДС</value>
-  </data>
-  <data name="CoverGroup_Databooks" xml:space="preserve">
-    <value>Справочники</value>
+  <data name="Property_Name" xml:space="preserve">
+    <value>Имя</value>
   </data>
   <data name="DisplayName" xml:space="preserve">
-    <value>Интеграция с 1С</value>
+    <value>Настройки OData</value>
   </data>
-  <data name="JobDisplayName_2e3e5419d9b94fa4bba757d4585d0580" xml:space="preserve">
-    <value>Обновление информации о платежах</value>
+  <data name="AccusativeDisplayName" xml:space="preserve">
+    <value>Настройки OData</value>
   </data>
-  <data name="JobDescription_2e3e5419d9b94fa4bba757d4585d0580" xml:space="preserve">
-    <value>Обновление информации о платежах из 1С.</value>
-  </data>
-  <data name="CoverGroup_Settings" xml:space="preserve">
-    <value>Настройки</value>
-  </data>
-  <data name="CoverAction_UpdatePaymentsSettings" xml:space="preserve">
-    <value>Настройки для обновления платежей</value>
-  </data>
-  <data name="CoverDescription_UpdatePaymentsSettings" xml:space="preserve">
-    <value>Показать список настроек для обновления платежей.</value>
-  </data>
-  <data name="CoverAction_OdataSettings" xml:space="preserve">
+  <data name="CollectionDisplayName" xml:space="preserve">
     <value>Настройки OData</value>
   </data>
 </root>

@@ -7,6 +7,19 @@ namespace btlab.IntegrationWith1c.Constants
   {
 
     /// <summary>
+    /// Ref Организации Шисейдо в 1С
+    /// </summary>
+    public const string OneC_ShiseidoOrgRef = "b7befbac-a735-44a9-8de3-18e236cda461";
+    /// <summary>
+    /// Ref Общего склада в 1С
+    /// </summary>
+    public const string OneC_CommonStorageRef = "b7befbac-a735-44a9-8de3-18e236cda461";
+    /// <summary>
+    /// Формат даты при передаче в 1С
+    /// </summary>
+    public const string OneC_DateFormat = "yyyy-MM-ddT00:00:00";
+    
+    /// <summary>
     /// Формат xml
     /// </summary>
     public const string XMLFileFormat = "*.xml";

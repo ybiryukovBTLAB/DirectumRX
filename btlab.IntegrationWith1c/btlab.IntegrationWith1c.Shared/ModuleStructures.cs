@@ -8,6 +8,25 @@ namespace btlab.IntegrationWith1c.Structures.Module
 {
 
   /// <summary>
+  /// Настройки OData
+  /// </summary>
+  [Public]
+  partial class ODataSetting
+  {    
+    public IOdataSetting Data {
+      get{
+        var odataSettingArr = btlab.IntegrationWith1c.OdataSettings.GetAllCached().ToArray();
+        if(odataSettingArr.Length > 0){
+          return odataSettingArr[0];
+        }else{
+          Logger.Debug("Не удалось получить настройки Odata из одноименного справочника.");
+          return null;
+        }
+      }
+    }
+  }
+
+  /// <summary>
   /// Информация о платеже
   /// </summary>
   [Public]

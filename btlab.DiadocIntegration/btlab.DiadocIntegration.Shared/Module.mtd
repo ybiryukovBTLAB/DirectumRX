@@ -48,6 +48,10 @@
   "ExplorerTreeOrder": [
     {
       "ItemId": "6cce88d9-9686-4abd-a0ee-b8d316066814"
+    },
+    {
+      "ItemId": "c81a52f9-ca9b-461c-810e-9e0458613998",
+      "PreviousItemId": "6cce88d9-9686-4abd-a0ee-b8d316066814"
     }
   ],
   "IconResourcesKeys": [],
@@ -63,39 +67,6 @@
       "Monthly": "DaysOfMonth",
       "MonthSchedule": "Monthly",
       "StartAt": "1753-01-01T00:00:00"
-    },
-    {
-      "NameGuid": "c74edd56-b450-407b-b9bb-766b5bac59d2",
-      "Name": "TestJob",
-      "GenerateHandler": true,
-      "MonthSchedule": "Monthly",
-      "StartAt": "1753-01-01T08:30:00"
-    },
-    {
-      "NameGuid": "eb2fe8bb-e297-4214-afb6-0485f390df9c",
-      "Name": "IncomingInvoiceJob",
-      "GenerateHandler": true,
-      "MonthSchedule": "Monthly",
-      "StartAt": "1753-01-01T08:30:00"
-    },
-    {
-      "NameGuid": "3da36487-aed1-4e10-a751-e6cdab06cacc",
-      "Name": "ReceiptGoodsServicesJob",
-      "GenerateHandler": true,
-      "MonthSchedule": "Monthly",
-      "StartAt": "1753-01-01T08:30:00"
-    }
-  ],
-  "Libraries": [
-    {
-      "NameGuid": "39deb899-f68b-4452-80ee-b747a8ca9a95",
-      "Name": "SystemNetHttp",
-      "Scope": "Both"
-    },
-    {
-      "NameGuid": "052de963-7bf6-4428-9904-e772ddbab595",
-      "Name": "NewtonsoftJson",
-      "Scope": "Both"
     }
   ],
   "Overridden": [
