@@ -144,4 +144,7 @@
   <data name="Control_7af90172fc104a3b8d9fa9fecded6c2e_EmptyText" xml:space="preserve">
     <value />
   </data>
+  <data name="Property_WasExportedTo1c" xml:space="preserve">
+    <value>Уже был экспортирован в 1С</value>
+  </data>
 </root>

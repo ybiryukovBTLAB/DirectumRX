@@ -55,7 +55,8 @@ namespace btlab.DiadocIntegration.Server
         closingDocs.AddRange(btlab.Shiseido.Waybills.GetAll().ToArray());//Накладная
         
         var docs = closingDocs
-          .Where(d => d.Synhronyse1C.HasValue && d.Synhronyse1C.Value == true);
+          .Where(d => d.Synhronyse1C.HasValue && d.Synhronyse1C.Value == true)
+          .Where(d => !d.WasExportedTo1c.HasValue || d.WasExportedTo1c == false);
         
         foreach(var doc in docs){
           if(btlab.Shiseido.ContractStatements.Is(doc)){
@@ -156,7 +157,7 @@ namespace btlab.DiadocIntegration.Server
         Log($"status={closingDocResult.StatusCode} resp={responseString}");
         return;
       }
-      
+      SetDocumentWasExportedTo1c(doc);
       var result = GetDeserializeData(responseString);
       var docRef = result["Ref_Key"] as string;
       
@@ -417,12 +418,18 @@ namespace btlab.DiadocIntegration.Server
        ConductIt("ПлатежноеПоручение", docRef);
     }
     
-    private void SetDocumentWasExportedTo1c(btlab.Shiseido.IIncomingInvoice doc){
-      doc.SkipContract = true;
-      var contractControl = doc.State.Properties.Contract;
-      contractControl.IsEnabled = contractControl.IsRequired = false;
-      doc.WasExportedTo1c = true;
-      doc.Save();
+    private void SetDocumentWasExportedTo1c(btlab.Shiseido.IAccountingDocumentBase docBase){
+      if(btlab.Shiseido.IncomingInvoices.Is(docBase)){
+        var doc = btlab.Shiseido.IncomingInvoices.As(docBase);
+        doc.SkipContract = true;
+        var contractControl = doc.State.Properties.Contract;
+        contractControl.IsEnabled = contractControl.IsRequired = false;
+        doc.WasExportedTo1c = true;
+        doc.Save();
+      }else{
+        docBase.WasExportedTo1c = true;
+        docBase.Save();
+      }
     }
     
     /// <summary>

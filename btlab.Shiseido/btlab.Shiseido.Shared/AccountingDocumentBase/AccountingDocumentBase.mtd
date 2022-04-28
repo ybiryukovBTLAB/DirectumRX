@@ -188,6 +188,14 @@
       "Code": "NDS",
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
       "PreviousPropertyGuid": "63f62a41-f348-45d2-98fd-f87cba1140fc"
+    },
+    {
+      "$type": "Sungero.Metadata.BooleanPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "3c7ae1dc-bbd7-480e-8ef6-d763515adbdf",
+      "Name": "WasExportedTo1c",
+      "Code": "WasExportedTo1",
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.BooleanEditorToBooleanBinder",
+      "PreviousPropertyGuid": "a437a82f-02a6-426b-8545-dfc81ee7dad3"
     }
   ],
   "PublicStructures": [],
