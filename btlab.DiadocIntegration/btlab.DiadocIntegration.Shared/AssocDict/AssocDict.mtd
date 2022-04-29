@@ -59,6 +59,7 @@
     }
   ],
   "IconResourcesKeys": [],
+  "IsVisible": false,
   "OperationsClass": "",
   "Overridden": [
     "IsVisible"
