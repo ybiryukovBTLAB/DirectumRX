@@ -514,7 +514,7 @@ namespace btlab.IntegrationWith1c.Server
          data.Add("СтавкаНДС", nds);
        }
        if(!string.IsNullOrEmpty(subject)){
-         data.Add("НазначениеПлатежа", subject);
+         data.Add("НазначениеПлатежа", $"Оплата от: {doc.Name} {doc.Contract.Name} {subject}");
        }
        var tasks = new List<Sungero.Docflow.IFreeApprovalTask>();
        foreach(var t in Sungero.Docflow.FreeApprovalTasks.GetAll()){

@@ -126,4 +126,13 @@
   <data name="CollectionDisplayName" xml:space="preserve">
     <value>Настройки OData</value>
   </data>
+  <data name="Property_Url" xml:space="preserve">
+    <value>Адрес ОДаты</value>
+  </data>
+  <data name="Property_UserName" xml:space="preserve">
+    <value>Имя пользователя ОДаты</value>
+  </data>
+  <data name="Property_Pass" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
 </root>

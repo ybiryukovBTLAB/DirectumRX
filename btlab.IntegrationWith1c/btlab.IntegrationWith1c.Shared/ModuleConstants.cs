@@ -13,7 +13,7 @@ namespace btlab.IntegrationWith1c.Constants
     /// <summary>
     /// Ref Общего склада в 1С
     /// </summary>
-    public const string OneC_CommonStorageRef = "b7befbac-a735-44a9-8de3-18e236cda461";
+    public const string OneC_CommonStorageRef = "ba2e7c85-4c97-11e5-8953-00059a3c7800";
     /// <summary>
     /// Формат даты при передаче в 1С
     /// </summary>
