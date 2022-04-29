@@ -18,6 +18,10 @@ namespace btlab.IntegrationWith1c.Constants
     /// Формат даты при передаче в 1С
     /// </summary>
     public const string OneC_DateFormat = "yyyy-MM-ddT00:00:00";
+    /// <summary>
+    /// Путь к своему логу
+    /// </summary>
+    public const string LogPath = "C:\\log\\log.txt";
     
     /// <summary>
     /// Формат xml

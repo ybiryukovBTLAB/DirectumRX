@@ -230,7 +230,7 @@ namespace btlab.IntegrationWith1c.Server
     /// </summary>
     public virtual void ReceiptGoodsServicesJob()
     {
-     Logger.Debug($"========= ReceiptGoodsServicesJob: {Calendar.Now} =========");
+     Log($"========= ReceiptGoodsServicesJob: {Calendar.Now} =========");
       try{
         var closingDocs = new List<btlab.Shiseido.IAccountingDocumentBase>();
         closingDocs.AddRange(btlab.Shiseido.ContractStatements.GetAll().ToArray());//Акт
@@ -243,24 +243,24 @@ namespace btlab.IntegrationWith1c.Server
         
         foreach(var doc in docs){
           if(btlab.Shiseido.ContractStatements.Is(doc)){
-            Logger.Debug($"=== Акт: {doc.Id} ===");
+            Log($"=== Акт: {doc.Id} ===");
           }else
           if(btlab.Shiseido.UniversalTransferDocuments.Is(doc)){
-            Logger.Debug($"=== УПД: {doc.Id} ===");
+            Log($"=== УПД: {doc.Id} ===");
           }else
           if(btlab.Shiseido.Waybills.Is(doc)){
-            Logger.Debug($"=== Накладная: {doc.Id} ===");
+            Log($"=== Накладная: {doc.Id} ===");
           }else{
-            Logger.Debug($"=== Неведомый: {doc.Id} ===");
+            Log($"=== Неведомый: {doc.Id} ===");
           }
           if(!DocIsLocked(doc)){
             ExportClosingDocTo1c(doc);
           }else{
-            Logger.Debug("Документ заблокирован");
+            Log("Документ заблокирован");
           }
         }
       }catch(Exception ex){
-        Logger.Debug("err="+ex.Message+Environment.NewLine+ex.StackTrace);
+        Log("err="+ex.Message+Environment.NewLine+ex.StackTrace);
       }
     }
     
@@ -272,7 +272,7 @@ namespace btlab.IntegrationWith1c.Server
       
       var data = new Dictionary<string,object>();
       if(string.IsNullOrEmpty(doc.RegistrationNumber)){
-        Logger.Debug($"Нет регистрационного номера");
+        Log($"Нет регистрационного номера");
         return;
       }
       
@@ -301,7 +301,7 @@ namespace btlab.IntegrationWith1c.Server
       var closingDocResult = CreateDocIn1c("ПоступлениеТоваровУслуг", data);
       var responseString = closingDocResult.Content.ReadAsStringAsync().Result;
       if(closingDocResult.StatusCode != HttpStatusCode.Created){
-        Logger.Debug($"status={closingDocResult.StatusCode} resp={responseString}");
+        Log($"status={closingDocResult.StatusCode} resp={responseString}");
         return;
       }
       SetDocumentWasExportedTo1c(doc);
@@ -313,18 +313,18 @@ namespace btlab.IntegrationWith1c.Server
       data.Add("Статус_Type", "StandardODATA.СтатусыДокументовПоступления");
       //var orgRef = btlab.Shiseido.BusinessUnits.As(doc.BusinessUnit)?.Id1c;
       //if(string.IsNullOrEmpty(orgRef)){
-      //  Logger.Debug($"Не удалось получить нашу организацию");
+      //  Log($"Не удалось получить нашу организацию");
       //}
       var docType = "StandardODATA.Document_ПоступлениеТоваровУслуг";
       var statusDocResult = UpdateObjIn1c("InformationRegister_СтатусыДокументов", ourUnitRef, docRef, docType, data);
       responseString = statusDocResult.Content.ReadAsStringAsync().Result;
       if (statusDocResult.StatusCode != HttpStatusCode.OK)
       {
-        Logger.Debug($"status={statusDocResult.StatusCode} resp={responseString}");
+        Log($"status={statusDocResult.StatusCode} resp={responseString}");
         return;
       }
       
-      Logger.Debug("isUpd="+isUpd);
+      Log("isUpd="+isUpd);
       var isAct = btlab.Shiseido.ContractStatements.Is(doc);
       if(!isAct){
         return;
@@ -332,10 +332,10 @@ namespace btlab.IntegrationWith1c.Server
       
       
       if(string.IsNullOrEmpty(docRef)){
-        Logger.Debug("Не удалось получить Ref созданного документа");
+        Log("Не удалось получить Ref созданного документа");
         return;
       }else{
-        Logger.Debug($"Ref созданного документа: {docRef}");
+        Log($"Ref созданного документа: {docRef}");
       }
       
       var relatedFromDocs = doc.Relations.GetRelatedFrom().ToArray();
@@ -348,10 +348,10 @@ namespace btlab.IntegrationWith1c.Server
         .ToArray();
       
       if(docs.Length < 1){
-        Logger.Debug($"Нет счет-фактур в связях");
+        Log($"Нет счет-фактур в связях");
         return;
       }
-      Logger.Debug($"Берем счет-фактуру={docs[0].Id}");
+      Log($"Берем счет-фактуру={docs[0].Id}");
       var incInv = Sungero.FinancialArchive.IncomingTaxInvoices.As(docs[0]);
       
       data = new Dictionary<string,object>();
@@ -363,7 +363,7 @@ namespace btlab.IntegrationWith1c.Server
         data.Add("НомерВходящегоДокумента", regNum);
         data.Add("ДатаВходящегоДокумента", incInv.RegistrationDate.Value.ToString(formatDate));
       }else{
-        Logger.Debug($"Нет регистрационного номера/даты в счет-фактуре");
+        Log($"Нет регистрационного номера/даты в счет-фактуре");
       }
       
       if(!string.IsNullOrEmpty(contractorRef)){
@@ -375,7 +375,7 @@ namespace btlab.IntegrationWith1c.Server
       var incInvResult = CreateDocIn1c("СчетФактураПолученный", data);
       responseString = incInvResult.Content.ReadAsStringAsync().Result;
       if(incInvResult.StatusCode != HttpStatusCode.Created){
-        Logger.Debug($"status={incInvResult.StatusCode} resp={responseString}");
+        Log($"status={incInvResult.StatusCode} resp={responseString}");
         return;
       }      
     }
@@ -387,29 +387,29 @@ namespace btlab.IntegrationWith1c.Server
     /// </summary>
     public virtual void IncomingInvoiceJob()
     {
-     Logger.Debug($"========= IncomingInvoiceJob: {Calendar.Now} =========");
+     Log($"========= IncomingInvoiceJob: {Calendar.Now} =========");
      try{
          var incInvDocs = btlab.Shiseido.IncomingInvoices.GetAll()
            .ToArray();
          foreach(var doc in incInvDocs){
-           Logger.Debug($"=== Входящий счет: {doc.Id} ===");
+           Log($"=== Входящий счет: {doc.Id} ===");
            if(doc.Synhronyse1C.HasValue && doc.Synhronyse1C.Value == true){
              if(!doc.WasExportedTo1c.HasValue || doc.WasExportedTo1c.Value == false){
                 if(!DocIsLocked(doc)){
                   ExportIncomingInvoiceDocTo1c(doc);
                 }else{
-                  Logger.Debug($"Документ заблокирован");
+                  Log($"Документ заблокирован");
                 }
              }else{
-                Logger.Debug($"Уже был экспортирован в 1с={doc.WasExportedTo1c}");
+                Log($"Уже был экспортирован в 1с={doc.WasExportedTo1c}");
              }
            }else{
-             Logger.Debug($"Синхронизировать с 1с={doc.Synhronyse1C}");
+             Log($"Синхронизировать с 1с={doc.Synhronyse1C}");
            }
          }
         
      }catch(Exception e){
-       Logger.Debug($"IncomingInvoiceJob: err= {e.Message+Environment.NewLine+e.StackTrace}");
+       Log($"IncomingInvoiceJob: err= {e.Message+Environment.NewLine+e.StackTrace}");
      }
     
     }
@@ -430,7 +430,7 @@ namespace btlab.IntegrationWith1c.Server
        var ourUnitRef = Constants.Module.OneC_ShiseidoOrgRef;
       
        if(string.IsNullOrEmpty(inn) || string.IsNullOrEmpty(trrc) || string.IsNullOrEmpty(bankAccNum)){
-         Logger.Debug($"Не все рекомендованные данные заполнены: inn={inn}, trrc={trrc}, bankAccNum={bankAccNum}.");
+         Log($"Не все рекомендованные данные заполнены: inn={inn}, trrc={trrc}, bankAccNum={bankAccNum}.");
          return;
        }
   
@@ -442,11 +442,11 @@ namespace btlab.IntegrationWith1c.Server
        var contractorRef = GetValue(contractorData, "Ref_Key");
        if(string.IsNullOrEmpty(contractorRef))
        {
-         Logger.Debug($"Неправильный Ref контрагента: {contractorRef}");
+         Log($"Неправильный Ref контрагента: {contractorRef}");
          return;
        }
        if(!string.IsNullOrEmpty(ourUnitRef)){
-         Logger.Debug($"Не удалось получить нашу организацию");
+         Log($"Не удалось получить нашу организацию");
        }
        filterData = new Dictionary<string, string> {
          {"НомерСчета", bankAccNum}
@@ -457,7 +457,7 @@ namespace btlab.IntegrationWith1c.Server
        var bankData = GetObjData("Catalog_БанковскиеСчета", filterData, addFilterData);
        var bankAccRef = GetValue(bankData, "Ref_Key");
        if(string.IsNullOrEmpty(bankAccRef)){
-         Logger.Debug($"Неправильный банковский счет: {bankAccRef}");
+         Log($"Неправильный банковский счет: {bankAccRef}");
        }
        
        string contractRef = null;
@@ -468,8 +468,8 @@ namespace btlab.IntegrationWith1c.Server
           var coRegNum = doc.Contract.RegistrationNumber;
           var coRegDate = doc.Contract.RegistrationDate;
           if(!coRegDate.HasValue || string.IsNullOrEmpty(coRegNum) || string.IsNullOrEmpty(coInn) || string.IsNullOrEmpty(coTrrc)){
-            Logger.Debug("Присутствуют не все необходимые, для поиска договора, данные:");
-            Logger.Debug($"coInn={coInn}, coTrrc={coTrrc}, coRegNum={coRegNum}, coRegDate={coRegDate}");
+            Log("Присутствуют не все необходимые, для поиска договора, данные:");
+            Log($"coInn={coInn}, coTrrc={coTrrc}, coRegNum={coRegNum}, coRegDate={coRegDate}");
           } else {
               string coContractorRef;
               if(coInn!=inn || coTrrc!=trrc){
@@ -550,21 +550,21 @@ namespace btlab.IntegrationWith1c.Server
        }
        
        var json = JsonConvert.SerializeObject(data);
-       //Logger.Debug("requestBody="+json);
+       //Log("requestBody="+json);
        var incInvResult = CreateDocIn1c("ПлатежноеПоручение", data);
        var responseString = incInvResult.Content.ReadAsStringAsync().Result;
        if(incInvResult.StatusCode != HttpStatusCode.Created){
-         Logger.Debug($"status={incInvResult.StatusCode} resp={responseString}");
+         Log($"status={incInvResult.StatusCode} resp={responseString}");
          return;
        }
        SetDocumentWasExportedTo1c(doc);
        var result = GetDeserializeData(responseString);
        var docRef = result["Ref_Key"] as string;
        if(string.IsNullOrEmpty(docRef)){
-         Logger.Debug("Не удалось получить Ref созданного документа");
+         Log("Не удалось получить Ref созданного документа");
          return;
        }else{
-         Logger.Debug($"Ref созданного документа: {docRef}");
+         Log($"Ref созданного документа: {docRef}");
        }
        ConductIt("ПлатежноеПоручение", docRef);
     }
@@ -667,14 +667,13 @@ namespace btlab.IntegrationWith1c.Server
     
     private void ConductIt(string docType, string docRef)
     {
-      var odataSetting = new Structures.Module.ODataSetting();
-      var url = odataSetting.Data.Url;
-      var userName = odataSetting.Data.UserName;
-      var pass = odataSetting.Data.Pass;
+      var url = GetUrl();
+      var userName = GetUserName();
+      var pass = GetPass();
       
-      Logger.Debug("=== ConductIt start "+Calendar.Now+" ===");
+      Log("=== ConductIt start "+Calendar.Now+" ===");
       string requestUri = $"{url}Document_{docType}(guid'{docRef}')/Post?PostingModeOperational=false";
-      Logger.Debug("requestUri="+requestUri);
+      Log("requestUri="+requestUri);
       HttpClientHandler handler = new HttpClientHandler(){
         PreAuthenticate = true,
         Credentials = new NetworkCredential(userName, pass)
@@ -686,7 +685,7 @@ namespace btlab.IntegrationWith1c.Server
        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
        
        var jsonContent = "{}";
-       Logger.Debug("jsonContent="+jsonContent);
+       Log("jsonContent="+jsonContent);
        var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
        var response = client.PostAsync(requestUri, content);
        var responseString = response.Result.Content.ReadAsStringAsync().Result;
@@ -696,7 +695,7 @@ namespace btlab.IntegrationWith1c.Server
        }
        else
        {
-         Logger.Debug("status="+response.Result.StatusCode+Environment.NewLine+responseString);
+         Log("status="+response.Result.StatusCode+Environment.NewLine+responseString);
        }
     }
 
@@ -741,10 +740,9 @@ namespace btlab.IntegrationWith1c.Server
    
     private HttpResponseMessage GetDataFrom1c(string type, string filter)
     {
-      var odataSetting = new Structures.Module.ODataSetting();
-      var url = odataSetting.Data.Url;
-      var userName = odataSetting.Data.UserName;
-      var pass = odataSetting.Data.Pass;
+      var url = GetUrl();
+      var userName = GetUserName();
+      var pass = GetPass();
 
       string requestUri = url + type + "?$format=json";
       if(!string.IsNullOrEmpty(filter)){
@@ -759,19 +757,18 @@ namespace btlab.IntegrationWith1c.Server
       client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
       
       var response = client.GetAsync(requestUri);
-      Logger.Debug($"requestUri={requestUri}");
+      Log($"requestUri={requestUri}");
       return response.Result;
     }
     
     private HttpResponseMessage UpdateObjIn1c(string objType, string orgRef, string docRef, string docType, Dictionary<string, object> requestData)
     {
-        var odataSetting = new Structures.Module.ODataSetting();
-        var url = odataSetting.Data.Url;
-        var userName = odataSetting.Data.UserName;
-        var pass = odataSetting.Data.Pass;
-        Logger.Debug("=== UpdateObjIn1c start "+Calendar.Now+" ===");
+        var url = GetUrl();
+        var userName = GetUserName();
+        var pass = GetPass();
+        Log("=== UpdateObjIn1c start "+Calendar.Now+" ===");
         string requestUri = url + objType + $"(Организация_Key=guid'{orgRef}', Документ=guid'{docRef}', Документ_Type='{docType}')";
-        Logger.Debug("requestUri="+requestUri);
+        Log("requestUri="+requestUri);
         HttpClientHandler handler = new HttpClientHandler(){
             PreAuthenticate = true,
             Credentials = new NetworkCredential(userName, pass)
@@ -785,7 +782,7 @@ namespace btlab.IntegrationWith1c.Server
         client.BaseAddress = new Uri(requestUri);
          
         var jsonContent = JsonConvert.SerializeObject(requestData);
-        Logger.Debug("jsonContent="+jsonContent);
+        Log("jsonContent="+jsonContent);
         var httpVerb = new HttpMethod("PATCH");
         var httpRequestMessage = new HttpRequestMessage(httpVerb, requestUri)
         {
@@ -799,14 +796,13 @@ namespace btlab.IntegrationWith1c.Server
   
     private HttpResponseMessage CreateDocIn1c(string docType, Dictionary<string, object> requestData)
     {
-      var odataSetting = new Structures.Module.ODataSetting();
-      var url = odataSetting.Data.Url;
-      var userName = odataSetting.Data.UserName;
-      var pass = odataSetting.Data.Pass;
+      var url = GetUrl();
+      var userName = GetUserName();
+      var pass = GetPass();
       
-      Logger.Debug("=== CreateDocIn1c start "+Calendar.Now+" ===");
+      Log("=== CreateDocIn1c start "+Calendar.Now+" ===");
       string requestUri = url + "Document_" + docType + "?$format=json";
-      Logger.Debug("requestUri="+requestUri);
+      Log("requestUri="+requestUri);
       HttpClientHandler handler = new HttpClientHandler(){
         PreAuthenticate = true,
         Credentials = new NetworkCredential(userName, pass)
@@ -820,10 +816,47 @@ namespace btlab.IntegrationWith1c.Server
       
        
        var jsonContent = JsonConvert.SerializeObject(requestData);
-       Logger.Debug("jsonContent="+jsonContent);
+       Log("jsonContent="+jsonContent);
        var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
        var response = client.PostAsync(requestUri, content);
        return response.Result;
+    }
+    
+    public void Log(string logMessage)
+    {
+      using (System.IO.StreamWriter w = System.IO.File.AppendText(Constants.Module.LogPath))
+      {
+        w.WriteLine($"{logMessage}");
+      }
+    }
+    #endregion
+    
+    #region Костыль пока не получилось перевести в структуры.
+    private string GetUrl(){
+      var odataSettings = btlab.IntegrationWith1c.OdataSettings.GetAll().ToArray();
+      if(odataSettings.Length == 0){
+        Log("Не удалось получить Url");
+        return null;
+      }
+      return odataSettings[0].Url;//"http://172.16.0.207/InfoBaseTest2/odata/standard.odata/"
+    }
+    
+    private string GetUserName(){
+      var odataSettings = btlab.IntegrationWith1c.OdataSettings.GetAll().ToArray();
+      if(odataSettings.Length == 0){
+        Log("Не удалось получить UserName");
+        return null;
+      }
+      return odataSettings[0].UserName;//"odata.user"
+    }
+    
+    private string GetPass(){
+      var odataSettings = btlab.IntegrationWith1c.OdataSettings.GetAll().ToArray();
+      if(odataSettings.Length == 0){
+        Log("Не удалось получить Pass");
+        return null;
+      }
+      return odataSettings[0].Pass;//"aSWS3dc12345"
     }
     #endregion
 

@@ -117,8 +117,8 @@
   ],
   "Libraries": [
     {
-      "NameGuid": "79da706d-d2ba-46ae-8a6c-b7f9bf73d53d",
-      "Name": "Newtonsoft",
+      "NameGuid": "a5ab7db3-b977-4f10-b841-80e8e1e970ad",
+      "Name": "NewtonsoftJson",
       "Scope": "Both"
     }
   ],
