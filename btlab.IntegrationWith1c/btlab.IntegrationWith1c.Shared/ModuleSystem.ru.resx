@@ -144,4 +144,10 @@
   <data name="CoverAction_OdataSettings" xml:space="preserve">
     <value>Настройки OData</value>
   </data>
+  <data name="CoverTitle" xml:space="preserve">
+    <value>Интеграция с 1С</value>
+  </data>
+  <data name="CoverDescription" xml:space="preserve">
+    <value>Модуль предназначен для интергации с 1С.</value>
+  </data>
 </root>
