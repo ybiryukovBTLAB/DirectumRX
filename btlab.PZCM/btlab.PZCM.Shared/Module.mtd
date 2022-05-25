@@ -1,0 +1,57 @@
+{
+  "$type": "Sungero.Metadata.SolutionMetadata, Sungero.Metadata",
+  "NameGuid": "b8f1ae7a-06cc-4283-a402-4005fc6c5dc2",
+  "Name": "PZCM",
+  "AsyncHandlers": [],
+  "ClientAssemblyName": "btlab.PZCM.Client",
+  "ClientBaseAssemblyName": "btlab.PZCM.ClientBase",
+  "ClientBaseNamespace": "btlab.PZCM.ClientBase",
+  "ClientNamespace": "btlab.PZCM.Client",
+  "Code": "PZCM",
+  "CompanyCode": "btlab",
+  "Cover": {
+    "NameGuid": "927cfaaa-d8fa-4b4c-9f5a-9215cc641f60",
+    "Actions": [],
+    "Background": null,
+    "Footer": {
+      "NameGuid": "7d7235eb-ac21-4d4b-bb76-6a3dd8878716",
+      "BackgroundPosition": "Stretch"
+    },
+    "Groups": [],
+    "Header": {
+      "NameGuid": "4127f290-8525-4b1c-b6e3-34ae15cb5341",
+      "BackgroundPosition": "Stretch"
+    }
+  },
+  "DesktopViews": [],
+  "IconResourcesKeys": [],
+  "Importance": "Medium",
+  "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "InterfaceNamespace": "btlab.PZCM",
+  "OrderedSpecialFolders": [],
+  "PublicStructures": [],
+  "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "ResourceInterfaceNamespace": "btlab.PZCM",
+  "ResourcesKeys": [],
+  "ServerAssemblyName": "btlab.PZCM.Server",
+  "ServerNamespace": "btlab.PZCM.Server",
+  "SharedAssemblyName": "btlab.PZCM.Shared",
+  "SharedNamespace": "btlab.PZCM.Shared",
+  "SpecialFolders": [],
+  "Version": "0.0.1.0",
+  "Widgets": [],
+  "Versions": [
+    {
+      "Type": "SolutionMetadata",
+      "Number": 6
+    },
+    {
+      "Type": "ModuleMetadata",
+      "Number": 6
+    },
+    {
+      "Type": "DomainApi",
+      "Number": 3
+    }
+  ]
+}
