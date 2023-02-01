@@ -1,0 +1,72 @@
+{
+  "$type": "Sungero.Metadata.ModuleMetadata, Sungero.Metadata",
+  "NameGuid": "f6f6bde0-8b77-4157-b63d-374b4017305c",
+  "Name": "HelpDesk",
+  "AsyncHandlers": [],
+  "ClientAssemblyName": "btlab.HelpDesk.Client",
+  "ClientBaseAssemblyName": "btlab.HelpDesk.ClientBase",
+  "ClientBaseNamespace": "btlab.HelpDesk.ClientBase",
+  "ClientNamespace": "btlab.HelpDesk.Client",
+  "Code": "HelpDes",
+  "CompanyCode": "btlab",
+  "Cover": {
+    "NameGuid": "65ccb0e1-d03b-471d-b279-046018f2bc32",
+    "Actions": [],
+    "Background": null,
+    "Footer": {
+      "NameGuid": "447d3e40-cc6b-4ef9-bcef-2ad84ea77489",
+      "BackgroundPosition": "Stretch"
+    },
+    "Groups": [],
+    "Header": {
+      "NameGuid": "43a42183-84d5-40f5-8ead-4a42f63f284c",
+      "BackgroundPosition": "Stretch"
+    }
+  },
+  "Dependencies": [
+    {
+      "Id": "a1a5f724-2e76-47fe-bb13-6ca3b4f39f15",
+      "IsSolutionModule": true,
+      "MaxVersion": "",
+      "MinVersion": ""
+    }
+  ],
+  "ExplorerTreeOrder": [
+    {
+      "ItemId": "0ae4b19d-ebc8-48e9-bfd7-1de5b5d204c5"
+    },
+    {
+      "ItemId": "7fe64a21-7d57-4989-bcba-ac8c6961ff55",
+      "PreviousItemId": "0ae4b19d-ebc8-48e9-bfd7-1de5b5d204c5"
+    },
+    {
+      "ItemId": "52ce8a5b-4f3b-492c-bc23-05fea00f2005",
+      "PreviousItemId": "7fe64a21-7d57-4989-bcba-ac8c6961ff55"
+    }
+  ],
+  "IconResourcesKeys": [],
+  "Importance": "Medium",
+  "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "InterfaceNamespace": "btlab.HelpDesk",
+  "PublicStructures": [],
+  "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "ResourceInterfaceNamespace": "btlab.HelpDesk",
+  "ResourcesKeys": [],
+  "ServerAssemblyName": "btlab.HelpDesk.Server",
+  "ServerNamespace": "btlab.HelpDesk.Server",
+  "SharedAssemblyName": "btlab.HelpDesk.Shared",
+  "SharedNamespace": "btlab.HelpDesk.Shared",
+  "SpecialFolders": [],
+  "Version": "0.0.1.0",
+  "Widgets": [],
+  "Versions": [
+    {
+      "Type": "ModuleMetadata",
+      "Number": 6
+    },
+    {
+      "Type": "DomainApi",
+      "Number": 3
+    }
+  ]
+}

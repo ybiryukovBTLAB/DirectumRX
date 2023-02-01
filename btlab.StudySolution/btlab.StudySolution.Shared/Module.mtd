@@ -1,0 +1,57 @@
+{
+  "$type": "Sungero.Metadata.SolutionMetadata, Sungero.Metadata",
+  "NameGuid": "a1a5f724-2e76-47fe-bb13-6ca3b4f39f15",
+  "Name": "StudySolution",
+  "AsyncHandlers": [],
+  "ClientAssemblyName": "btlab.StudySolution.Client",
+  "ClientBaseAssemblyName": "btlab.StudySolution.ClientBase",
+  "ClientBaseNamespace": "btlab.StudySolution.ClientBase",
+  "ClientNamespace": "btlab.StudySolution.Client",
+  "Code": "StudySo",
+  "CompanyCode": "btlab",
+  "Cover": {
+    "NameGuid": "5c135e59-c7e4-4fff-8dd4-423382839bb7",
+    "Actions": [],
+    "Background": null,
+    "Footer": {
+      "NameGuid": "183e98b7-3d0c-4714-ab26-e18ac33ca5d1",
+      "BackgroundPosition": "Stretch"
+    },
+    "Groups": [],
+    "Header": {
+      "NameGuid": "248e2bbc-dbec-4dd1-b72a-1bb3da3f4db7",
+      "BackgroundPosition": "Stretch"
+    }
+  },
+  "DesktopViews": [],
+  "IconResourcesKeys": [],
+  "Importance": "Medium",
+  "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "InterfaceNamespace": "btlab.StudySolution",
+  "OrderedSpecialFolders": [],
+  "PublicStructures": [],
+  "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "ResourceInterfaceNamespace": "btlab.StudySolution",
+  "ResourcesKeys": [],
+  "ServerAssemblyName": "btlab.StudySolution.Server",
+  "ServerNamespace": "btlab.StudySolution.Server",
+  "SharedAssemblyName": "btlab.StudySolution.Shared",
+  "SharedNamespace": "btlab.StudySolution.Shared",
+  "SpecialFolders": [],
+  "Version": "0.0.1.0",
+  "Widgets": [],
+  "Versions": [
+    {
+      "Type": "SolutionMetadata",
+      "Number": 6
+    },
+    {
+      "Type": "ModuleMetadata",
+      "Number": 6
+    },
+    {
+      "Type": "DomainApi",
+      "Number": 3
+    }
+  ]
+}

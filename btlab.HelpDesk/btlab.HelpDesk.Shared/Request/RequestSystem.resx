@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Property_Topic" xml:space="preserve">
+    <value>Topic</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Request</value>
+  </data>
+  <data name="AccusativeDisplayName" xml:space="preserve">
+    <value>Request</value>
+  </data>
+  <data name="CollectionDisplayName" xml:space="preserve">
+    <value>Request</value>
+  </data>
+  <data name="Property_Number" xml:space="preserve">
+    <value>Number</value>
+  </data>
+  <data name="Property_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Property_CreateDate" xml:space="preserve">
+    <value>CreateDate</value>
+  </data>
+  <data name="Property_ClosedDate" xml:space="preserve">
+    <value>ClosedDate</value>
+  </data>
+  <data name="Property_RequestKind" xml:space="preserve">
+    <value>RequestKind</value>
+  </data>
+  <data name="Property_Responsible" xml:space="preserve">
+    <value>Responsible</value>
+  </data>
+  <data name="Property_LifeCycle" xml:space="preserve">
+    <value>Life Cycle</value>
+  </data>
+  <data name="Enum_LifeCycle_InWork" xml:space="preserve">
+    <value>In Work</value>
+  </data>
+  <data name="Enum_LifeCycle_InControl" xml:space="preserve">
+    <value>In control</value>
+  </data>
+  <data name="Enum_LifeCycle_Closed" xml:space="preserve">
+    <value>Closed</value>
+  </data>
+  <data name="Property_Result" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="Property_Communication" xml:space="preserve">
+    <value>Communication</value>
+  </data>
+  <data name="Action_OpenRequest" xml:space="preserve">
+    <value>Открыть обращение</value>
+  </data>
+  <data name="ControlGroup_0b63861a115642dcb92819cb5eca372a" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ControlGroup_af26a0b5f03e406f9b26c0a9ec001c36" xml:space="preserve">
+    <value><![CDATA[ ]]></value>
+  </data>
+  <data name="Action_OpenRequestDescription" xml:space="preserve">
+    <value>Открывает обращение.</value>
+  </data>
+  <data name="Action_OpenRequestHint" xml:space="preserve">
+    <value>Открывает обращение</value>
+  </data>
+  <data name="Action_OpenRequestConfirmationMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Action_OpenRequestConfirmationDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Ribbon_GroupRequest_33fe1e89c03f49239d82067f3db2768c" xml:space="preserve">
+    <value>GroupRequest</value>
+  </data>
+  <data name="Action_ShowEmployeeRequest" xml:space="preserve">
+    <value>Обращения сотрудника</value>
+  </data>
+  <data name="Action_ShowEmployeeRequestDescription" xml:space="preserve">
+    <value>Обращения сотрудника</value>
+  </data>
+  <data name="Action_ShowEmployeeRequestHint" xml:space="preserve">
+    <value>Обращения сотрудника</value>
+  </data>
+  <data name="Action_ShowEmployeeRequestConfirmationMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Action_ShowEmployeeRequestConfirmationDescription" xml:space="preserve">
+    <value />
+  </data>
+</root>
